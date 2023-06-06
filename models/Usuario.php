@@ -6,7 +6,16 @@
         public $cedula;
         public $telefono;
         public $contrasena;
+        public $tipoUsuario;
 
+        function newUsuario ($nombre, $apellido, $cedula, $telefono, $contrasena, $tipoUsuario) {
+            $this->nombre=$nombre;
+            $this->apellido=$apellido;
+            $this->cedula=$cedula;
+            $this->telefono=$telefono;
+            $this->contrasena=$contrasena;
+            $this->tipoUsuario=$tipoUsuario;
+        }
 
         function set_nombre($nombre){ 
             $this->nombre=$nombre; 
@@ -51,6 +60,8 @@
             return $this->contrasena; 
         }
         
+        function destruct () {}
+
     }
     
     

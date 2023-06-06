@@ -7,7 +7,17 @@
         public $autor;
         public $categoria;
         public $estado;
+        public $descripcion;
 
+
+        function newLibro ($id, $titulo, $editorial, $isbn, $autor, $categoria, $estado) {
+            $this->titulo=$titulo;
+            $this->editorial=$editorial;
+            $this->isbn=$isbn; 
+            $this->categoria=$categoria;
+            $this->autor=$autor; 
+            $this->estado=$estado;
+        }
 
         //setters
 
@@ -31,6 +41,9 @@
             $this->autor=$autor; 
         } 
 
+        function set_estado($estado){ 
+            $this->estado=$estado; 
+        } 
 
         //getters
 
