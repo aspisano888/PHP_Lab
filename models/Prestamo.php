@@ -19,7 +19,7 @@
 
         //setters
 
-        function set_usuario$usuarioId($usuarioId){ 
+        function set_usuarioId($usuarioId){ 
             $this->usuarioId=$usuarioId; 
         } 
         
