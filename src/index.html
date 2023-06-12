@@ -15,8 +15,7 @@
 		<link rel="stylesheet" href="../images/swiper-bundle.min.css">
 	</head>
 	<body >
-		
-			<div class= "px-3 py-4 flex items-center justify-between bg-cover bg-center bg-opacity-100 bg-[url('../images/libro.png')]">   						<!--"bg-gradient-to-r from-cyan-500 to-blue-500 grid grid-cols-3 gap-3 flex items-center md:order-2">-->
+			<header class= "px-3 py-4 flex items-center justify-between bg-cover bg-center bg-opacity-100 bg-[url('../images/libro.png')]">   						<!--"bg-gradient-to-r from-cyan-500 to-blue-500 grid grid-cols-3 gap-3 flex items-center md:order-2">-->
 				<div class="justify-self-end m-[0px] ">
 					<a href="../vistas/login.html" class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
 						Login
@@ -32,10 +31,41 @@
 				<div class="m-[0px]">		
 					<input class= "placeholder:italic placeholder:text-slate-400 block bg-white w-[100px] border border-slate-300 rounded-md shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search..." type="text" name="search"/>                                     <!--"placeholder:italic placeholder:text-slate-400 block bg-white w-20 border border-slate-300 rounded-md py-0.5 pl-9 pr-0.5 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" -->
 				</div>
-			</div>
+			</header>
+
 			<div class="grid grid-cols-1 flex items-center justify-center bg-gradient-to-r from-blue-200 to-blue-100   ">
-<!-- slider     -->
-					<div class="slide-container max-w-[980px] w-full  px-0 py-10 swiper">
+<!-- carrousel imagenes -->
+				<div id="default-carousel" class="relative w-full pt-[50px]"  data-carousel="slide">
+					<!-- Carousel wrapper -->
+					<div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+						 <!-- Item 1 -->
+						<div class="  duration-700 ease-in-out" data-carousel-item >
+							<img src="../images/logo.png" class="absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+						</div>
+						<!-- Item 2 -->
+						<div class="hidden  duration-700 ease-in-out" data-carousel-item >
+							<img src="../images/libro.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+						</div>
+						<!-- Item 3 -->
+						<div class="hidden  duration-700 ease-in-out" data-carousel-item >
+							<img src="../images/remera.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+						</div>
+						<!-- Item 4 -->
+						<div class="hidden  duration-700 ease-in-out" data-carousel-item >
+							<img src="../images/cel.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+						</div>
+						<!-- Item 5 -->
+						<div class="hidden  duration-700 ease-in-out" data-carousel-item >
+							<img src="../images/cartel.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+						</div>
+					</div>
+
+				</div>
+
+<!-- slider     --><h2 class="text-lg font-medium text-[#333] pl-[70px] pt-[70px]">
+						Clasificación 1
+					</h2>
+					<div class="slide-container max-w-[980px] w-full  px-0 py-2 swiper">
 						<div class="slide-content mx-10 my-0 overflow-hidden">
 							<div class="card-wrapper swiper-wrapper">
 						<!-- slide 1-->
@@ -122,7 +152,10 @@
 						</div>
 					</div>		
 <!-- slider     -->
-					<div class="slide-container max-w-[980px] w-full  px-0 py-10 swiper">
+					<h2 class="text-lg font-medium text-[#333] pl-[70px] pt-[50px]">
+						Clasificación 2
+					</h2>
+					<div class="slide-container max-w-[980px] w-full  px-0 py-2 swiper">
 						<div class="slide-content mx-10 my-0 overflow-hidden">
 							<div class="card-wrapper swiper-wrapper">
 						<!-- slide 1-->
@@ -207,7 +240,16 @@
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-pagination"></div>
 						</div>
-					</div>	
+				</div>	
+			</div>
+
+			<footer class="bg-gradient-to-r from-blue-200 to-blue-100">
+				<div class="pt-[100px]">
+
+				</div>
+			</footer>
+
+
 	</body>
 
 	<script src= "../images/swiper-bundle.min.js"></script>
