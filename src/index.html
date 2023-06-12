@@ -1,37 +1,235 @@
 <!DOCTYPE html>
 
+
 <html>
 	<head>
 		<meta charset="UTF-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1.0">
- 		<link href="/dist/output.css" rel="stylesheet">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+ 		<link href="../dist/output.css" rel="stylesheet">
 		 <title>SeaBook</title>
+		 <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.20/dist/full.css" rel="stylesheet" type="text/css" />
+			<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="../images/swiper-bundle.min.css">
 	</head>
-	<body>
-		<div class="bg-header"> <!--class= "bg-[url('./images/images.png')] " h-14 bg-gradient-to-r from-cyan-500 to-blue-500 -->
-			<header >
-				<h1 class="absolute top-2 text-4xl ">SeaBook</h1>
-				</div class="right-0 top-2">
-    				<button class="px-4 py-1 text-sm text-black-600 font-semibold rounded-full border border-black hover:border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2">Identificarse</button>
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" stroke-width="0.5" stroke="currentColor" class="w-2 h-2">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-				  	</svg>
-
+	<body >
+		
+			<div class= "px-3 py-4 flex items-center justify-between bg-cover bg-center bg-opacity-100 bg-[url('../images/libro.png')]">   						<!--"bg-gradient-to-r from-cyan-500 to-blue-500 grid grid-cols-3 gap-3 flex items-center md:order-2">-->
+				<div class="justify-self-end m-[0px] ">
+					<a href="../vistas/login.html" class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+						Login
+					</a>              
+					<a href="#" class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+						Sign up
+					</a>          	
+				</div>	
+				<div class="m-[0px] flex">
+					<h1 class="font-bold text-black text-7xl pr-2 font-black text-gray-900 dark:text-white drop-shadow-2xl">SeaBook</h1>
+					<img src ="../images/logo.png" style="width:70px;height:60px;" class="pl-2">
+				</div>				
+				<div class="m-[0px]">		
+					<input class= "placeholder:italic placeholder:text-slate-400 block bg-white w-[100px] border border-slate-300 rounded-md shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search..." type="text" name="search"/>                                     <!--"placeholder:italic placeholder:text-slate-400 block bg-white w-20 border border-slate-300 rounded-md py-0.5 pl-9 pr-0.5 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" -->
 				</div>
-				
-				<div class="search-wrapper absolute right-2 top-2 rounded-full">			
-					<label class="relative block">
-						<span class="sr-only">Search</span>
-						<span class="absolute inset-y-0 left-0 flex items-center pl-2">
-							<svg class="h-5 w-5 fill-slate-300" viewBox="0 0 20 20"><!-- ... --></svg>
-						</span>
-						<input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search..." type="text" name="search"/>
-					</label>	
-				</div>
-			</header> 
-		</div>
-		<div>
+			</div>
+			<div class="grid grid-cols-1 flex items-center justify-center bg-gradient-to-r from-blue-200 to-blue-100   ">
+<!-- slider     -->
+					<div class="slide-container max-w-[980px] w-full  px-0 py-10 swiper">
+						<div class="slide-content mx-10 my-0 overflow-hidden">
+							<div class="card-wrapper swiper-wrapper">
+						<!-- slide 1-->
+								<div class="card bg-white rounded-[25px] swiper-slide">
+									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
+										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
 
-		</div>
+										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
+											<img src="../images/logo.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+										</div>
+									</div>
+									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
+										<h2 class="text-lg font-medium text-[#333]">Libro 1</h2>
+										<p class=" text-sm text-[#707070] text-center">descripción</p>
+										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
+									</div>
+								</div>
+
+						<!-- slide 2-->
+								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
+									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
+										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
+
+										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
+											<img src="../images/remera.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+										</div>
+									</div>
+									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
+										<h2 class="text-lg font-medium text-[#333]">Libro 2</h2>
+										<p class=" text-sm text-[#707070] text-center">descripción</p>
+										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
+									</div>
+								</div>
+
+						<!-- slide 3-->
+								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
+									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
+										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
+
+										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
+											<img src="../images/libro.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+										</div>
+									</div>
+									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
+										<h2 class="text-lg font-medium text-[#333]">Libro 3</h2>
+										<p class=" text-sm text-[#707070] text-center">descripción</p>
+										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
+									</div>
+								</div>
+						<!-- slide 4-->
+								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
+									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
+										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
+
+										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
+											<img src="../images/cartel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+										</div>
+									</div>
+									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
+										<h2 class="text-lg font-medium text-[#333]">Libro 4</h2>
+										<p class=" text-sm text-[#707070] text-center">descripción</p>
+										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
+									</div>
+								</div>
+						<!-- slide 5-->
+								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
+									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
+										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
+
+										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
+											<img src="../images/cel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+										</div>
+									</div>
+									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
+										<h2 class="text-lg font-medium text-[#333]">Libro 5</h2>
+										<p class=" text-sm text-[#707070] text-center">descripción</p>
+										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
+									</div>
+								</div>								
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>		
+<!-- slider     -->
+					<div class="slide-container max-w-[980px] w-full  px-0 py-10 swiper">
+						<div class="slide-content mx-10 my-0 overflow-hidden">
+							<div class="card-wrapper swiper-wrapper">
+						<!-- slide 1-->
+								<div class="card bg-white rounded-[25px] swiper-slide">
+									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
+										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
+
+										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
+											<img src="../images/logo.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+										</div>
+									</div>
+									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
+										<h2 class="text-lg font-medium text-[#333]">Libro 1</h2>
+										<p class=" text-sm text-[#707070] text-center">descripción</p>
+										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
+									</div>
+								</div>
+
+						<!-- slide 2-->
+								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
+									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
+										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
+
+										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
+											<img src="../images/remera.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+										</div>
+									</div>
+									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
+										<h2 class="text-lg font-medium text-[#333]">Libro 2</h2>
+										<p class=" text-sm text-[#707070] text-center">descripción</p>
+										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
+									</div>
+								</div>
+
+						<!-- slide 3-->
+								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
+									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
+										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
+
+										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
+											<img src="../images/libro.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+										</div>
+									</div>
+									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
+										<h2 class="text-lg font-medium text-[#333]">Libro 3</h2>
+										<p class=" text-sm text-[#707070] text-center">descripción</p>
+										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
+									</div>
+								</div>
+						<!-- slide 4-->
+								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
+									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
+										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
+
+										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
+											<img src="../images/cartel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+										</div>
+									</div>
+									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
+										<h2 class="text-lg font-medium text-[#333]">Libro 4</h2>
+										<p class=" text-sm text-[#707070] text-center">descripción</p>
+										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
+									</div>
+								</div>
+						<!-- slide 5-->
+								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
+									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
+										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
+
+										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
+											<img src="../images/cel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+										</div>
+									</div>
+									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
+										<h2 class="text-lg font-medium text-[#333]">Libro 5</h2>
+										<p class=" text-sm text-[#707070] text-center">descripción</p>
+										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
+									</div>
+								</div>								
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>	
 	</body>
+
+	<script src= "../images/swiper-bundle.min.js"></script>
+	<script>
+		var swiper = new Swiper(".slide-content",{
+			slidesPerView: 3,
+			spaceBetween: 25,
+			slidesPerGroup:3,
+
+			centerSlide: 'true',
+			fade: 'true',
+			grabCursor: 'true',
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+				dynamicBullets: true,
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+	</script>
+	
 </html>
