@@ -40,6 +40,15 @@
             $this->contrasena=$contrasena; 
         } 
 
+        function get_Usuario(){
+            return $this->nombre;
+            return $this->apellido;
+            return $this->cedula;
+            return $this->telefono;
+            return $this->contrasena;
+            return $this->tipoUsuario;
+        }
+
         function get_nombre(){ 
             return $this->nombre; 
         }

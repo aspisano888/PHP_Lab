@@ -1,6 +1,5 @@
+
 <!DOCTYPE html>
-
-
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -9,10 +8,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
  		<link href="../dist/output.css" rel="stylesheet">
-		 <title>SeaBook</title>
 		 <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.20/dist/full.css" rel="stylesheet" type="text/css" />
-			<script src="https://cdn.tailwindcss.com"></script>
-		<link rel="stylesheet" href="../images/swiper-bundle.min.css">
+         <script src="https://cdn.tailwindcss.com"></script>
+         <link rel="stylesheet" href="../images/swiper-bundle.min.css">
+		 <title>SeaBook</title>
 	</head>
 	<body >
 			<header class= "px-3 py-4 flex items-center justify-between bg-cover bg-center bg-opacity-100 bg-[url('../images/libro.png')]">   						<!--"bg-gradient-to-r from-cyan-500 to-blue-500 grid grid-cols-3 gap-3 flex items-center md:order-2">-->
@@ -66,7 +65,7 @@
 						Clasificación 1
 					</h2>
 					<div class="slide-container max-w-[980px] w-full  px-0 py-2 swiper">
-						<div class="slide-content mx-10 my-0 overflow-hidden">
+						<div class="slide-content mx-10 my-5 overflow-hidden">
 							<div class="card-wrapper swiper-wrapper">
 						<!-- slide 1-->
 								<div class="card bg-white rounded-[25px] swiper-slide">
