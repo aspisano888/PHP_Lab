@@ -1,5 +1,5 @@
 <?php
-    include("Usuario.php")
+    include("Usuario.php");
 
     class Socio extends Usuario{
 

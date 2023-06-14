@@ -1,9 +1,8 @@
 <?php
-    include("Usuario.php")
+    include("Usuario.php");
 
 
     class Administrador extends Usuario{
-
 
 
         function newAdmin ($nombre, $apellido, $cedula, $telefono, $contrasena, $tipoUsuario) {
@@ -44,6 +43,5 @@
         }
       
     }
-    
     
     ?>
