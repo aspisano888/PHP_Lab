@@ -105,7 +105,7 @@
 						<!-- slide 1-->
 								<div class="card bg-white rounded-[25px] swiper-slide">
 									////////////////
-									<?php foreach        ?>
+									
 									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
 										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
 

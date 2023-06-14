@@ -1,14 +1,20 @@
+<?php 
+$libro = $_GET["row"]; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="../dist/output.css" rel="stylesheet">
-     <title>Titulo del libro</title>
+
+     <title><?php echo $libro.["titulo"]?>></title>
      <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.20/dist/full.css" rel="stylesheet" type="text/css" />
         <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+
     <!--header de descripcion-->
     <div>
         <div class= "px-3 py-4 flex items-center justify-between bg-center bg-no-repeat bg-[url('../images/cel.png')] ">   						<!--"bg-gradient-to-r from-cyan-500 to-blue-500 grid grid-cols-3 gap-3 flex items-center md:order-2">-->	
@@ -20,12 +26,12 @@
             </div>
         </div>
     <div class="flex bg-white py-2 px-32">
-        <img src="../../images/libro.jpeg"  alt="">
+        <img src="data:image/png;base64,<?php echo base64_encode($libro['imagen']); ?>"  alt="">
         <div class="px-32">
-            <h3 class="text-3xl text-blue-950">Titulo de libro</h3>
-            <p class="py-4 text-black">Nombre de autor</p>
+            <h3 class="text-3xl text-blue-950"><?php echo $libro.["titulo"]?></h3>
+            <p class="py-4 text-black"><?php echo $libro.["descripcion"]?></p>
             <div class="w-1/2 not-italic text-2xl text-blue-950">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae unde error nisi. Inventore quas voluptate eveniet aperiam necessitatibus ullam ipsum dignissimos, numquam autem quae, nulla iure explicabo dolores sint culpa?</p>
+                <p><?php echo $libro.["titulo"]?></p>
             </div>
             <button class="btn btn-success mt-10 w-32">PRESTAR</button>
        
