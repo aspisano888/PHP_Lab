@@ -64,6 +64,7 @@
             return $this->autor; 
         }
         
+        
         function get_categoria(){ 
             return $this->categoria; 
         }
