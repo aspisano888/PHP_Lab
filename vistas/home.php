@@ -14,17 +14,17 @@
 		 <title>SeaBook</title>
 	</head>
 	<body >
-			<header class= "px-3 py-4 flex items-center justify-between bg-cover bg-center bg-opacity-100 bg-[url('../images/libro.png')]">   						<!--"bg-gradient-to-r from-cyan-500 to-blue-500 grid grid-cols-3 gap-3 flex items-center md:order-2">-->
-				<div class="justify-self-end m-[0px] ">
+			<header class= "px-3 py-4 flex items-center justify-between bg-cover bg-center bg-opacity-100 bg-[url('../images/libro.png')]">   						
+		<!--		<div class="justify-self-end m-[0px] ">
 					<a href="../vistas/login.html" class="px-6 py-2.5 bg-blue-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
 						Login
 					</a>              
 					<a href="#" class="px-6 py-2.5 bg-blue-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
 						Sign up
 					</a>          	
-				</div>	
+				</div>	-->
 				<div class="m-[0px] flex">
-					<h1 class="font-bold text-black text-7xl pr-2 font-black text-gray-900 dark:text-white drop-shadow-2xl">SeaBook</h1>
+					<h1 class="font-bold text-black text-7xl pl-[15px] pr-2 font-black text-gray-900 dark:text-white drop-shadow-2xl">SeaBook</h1>
 					<img src ="../images/logo.png" style="width:70px;height:70px;" class="pl-2">
 				</div>				
 				<div class="m-[0px]">		
