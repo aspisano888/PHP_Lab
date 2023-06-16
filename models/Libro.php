@@ -1,5 +1,7 @@
 <?php
     class Libro {
+        private $dbh;
+
         public $id;
         public $titulo;
         public $editorial;
@@ -8,6 +10,7 @@
         public $categoria;
         public $estado;
         public $descripcion;
+        public $images;
 
 
         function newLibro ($id, $titulo, $editorial, $isbn, $autor, $categoria, $estado) {

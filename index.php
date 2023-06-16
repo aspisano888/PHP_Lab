@@ -1,66 +1,49 @@
 
 <?php
-// include("conex.php"); 
-// $link=Conectarse(); 
-// $nom=$_GET['nomb']; 
-// $resultado=mysqli_query($link,"select* from persona where nombre=‘$nom’ "); 
-// while($filas= mysqli_fetch_array($resultado)){ 
-// 	$id=$filas["id"]; 
-// 	$n=$filas["nombre"]; 
-// 	$a=$filas["apellido"]; 
-// 	$e=$filas["edad"]; 
-// 	echo $id." ".$n." ".$a." ".$e."<br>"; 
-// } mysqli_close($link);
+include("./models/Conex.php"); 
+$conex = Conectarse();
+$libro = "SELECT * FROM libro";
+//$conexion = new Conexion();
+//$conex = $conexion->Conectar();
+/*
+include_once './models/Conex.php';
+$objeto = new Conexion();
+$conexion = $objeto->Conectar(); 
 
-// require_once "models/BD.php";
-
-// if(!isset($_GET['c'])) {
-// 	require_once "controlador/inicio.controlador.php";
-// 	$controlador = new InicioControlador();
-// 	call_user_func(array($controlador, "Inicio"));
-// } else {
-// 	$controlador = $_GET['c'];
-// 	require_once "controlador/$controlador.controlador.php";
-// 	$controlador = ucwords($controlador)."Controlador";
-// 	$controlador = new $controlador;
-// 	$accion = isset($_GET['a']) ?  $_GET['a'] : "Inicio";
-// 	call_user_func(array($controlador, $accion));
-// }
-
-
+$consulta = "SELECT titulo, descripcion, imagen FROM libro";
+$resultado = $conexion->prepare($consulta);
+$resultado->execute();
+$data = $resultado->fetchAll(PDO::FETCH_ASSOC);
+*/
 
 ?>
+
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
- 		<link href="../dist/output.css" rel="stylesheet">
+ 		<link href="./dist/output.css" rel="stylesheet">
 		 <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.20/dist/full.css" rel="stylesheet" type="text/css" />
          <script src="https://cdn.tailwindcss.com"></script>
-         <link rel="stylesheet" href="../images/swiper-bundle.min.css">
+         <link rel="stylesheet" href="./images/swiper-bundle.min.css">
 		 <title>SeaBook</title>
-
 	</head>
-	<form action="libro.php" method= "GET">
-
-		<body >
-			<header class= "px-3 py-4 flex items-center justify-between bg-cover bg-center bg-opacity-100 bg-[url('../images/libro.png')]">   						
-		<!--		<div class="justify-self-end m-[0px] ">
-					<a href="../vistas/login.html" class="px-6 py-2.5 bg-blue-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+	<body >
+			<header class= "px-3 py-4 flex items-center justify-between bg-cover bg-center bg-opacity-100 bg-[url('./images/libro.png')]">   						
+				<div class="justify-self-end m-[0px] ">
+					<a href="./vistas/login.php"  class="px-6 py-2.5 bg-blue-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
 						Login
 					</a>              
 					<a href="#" class="px-6 py-2.5 bg-blue-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
 						Sign up
 					</a>          	
-				</div>	-->
+				</div>	
 				<div class="m-[0px] flex">
 					<h1 class="font-bold text-black text-7xl pl-[15px] pr-2 font-black text-gray-900 dark:text-white drop-shadow-2xl">SeaBook</h1>
-					<img src ="../images/logo.png" style="width:70px;height:70px;" class="pl-2">
+					<img src ="./images/logo.png" style="width:70px;height:70px;" class="pl-2">
 				</div>				
 				<div class="m-[0px]">		
 					<input class= "placeholder:italic placeholder:text-slate-400 block bg-white w-[100px] border border-slate-300 rounded-md shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search..." type="text" name="search"/>                                     <!--"placeholder:italic placeholder:text-slate-400 block bg-white w-20 border border-slate-300 rounded-md py-0.5 pl-9 pr-0.5 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" -->
@@ -74,114 +57,56 @@
 					<div class="relative h-56 overflow-hidden rounded-lg md:h-[290px]">
 						 <!-- Item 1 -->
 						<div class="  duration-100 ease-in-out" data-carousel-item active >
-							<img src="../images/logo.png" class="absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+							<img src="./images/logo.png" class="absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
 						</div>
 						<!-- Item 2 -->
 						<div class="  duration-100 ease-in-out" data-carousel-item active >
-							<img src="../images/libro.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+							<img src="./images/libro.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
 						</div>
 						<!-- Item 3 -->
 						<div class="  duration-100 ease-in-out" data-carousel-item active>
-							<img src="../images/remera.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+							<img src="./images/remera.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
 						</div>
 						<!-- Item 4 -->
 						<div class="  duration-100 ease-in-out" data-carousel-item active>
-							<img src="../images/cel.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+							<img src="./images/cel.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
 						</div>
 						<!-- Item 5 -->
 						<div class="  duration-100 ease-in-out" data-carousel-item active>
-							<img src="../images/cartel.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+							<img src="./images/cartel.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
 						</div>
 					</div>
 
 				</div>
 
-<!-- slider     --><h2 class="text-lg font-medium text-[#333] pl-[70px] pt-[70px]">
+<!-- slider     --><h2 class="text-lg font-medium text-[#333] pl-[70px] pt-[50px]">
 						Clasificación 1
 					</h2>
-					<div class="slide-container max-w-[980px] w-full  px-0 py-2 swiper">
+					<div class="slide-container max-w-[1500px] w-full  px-0 py-0 swiper">
 						<div class="slide-content mx-10 my-5 overflow-hidden">
 							<div class="card-wrapper swiper-wrapper">
-						<!-- slide 1-->
+			<!-- slide 1-->
+								<?php	
+									$resultado=mysqli_query($conex, $libro);
+									while($row= mysqli_fetch_assoc($resultado)){	
+								?>
 								<div class="card bg-white rounded-[25px] swiper-slide">
-									////////////////
-									<?php foreach        ?>
 									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
 										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
-
 										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="../images/{libro.url}" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+											<img src="data:image/png;base64,<?php echo base64_encode($row['imagen']); ?>" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
 										</div>
 									</div>
 									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]">Libro 1</h2>
-										<p class=" text-sm text-[#707070] text-center">descripción</p>
-										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
-									</div>
-									/////////////////////
-								</div>
-
-						<!-- slide 2-->
-								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
-									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
-										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
-
-										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="../images/remera.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
-										</div>
-									</div>
-									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]">Libro 2</h2>
-										<p class=" text-sm text-[#707070] text-center">descripción</p>
-										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
+										<h2 class="text-lg font-medium text-[#333]"><?php echo $row["titulo"];?></h2>
+										<p class=" text-sm text-[#707070] text-center"><?php echo $row["descripcion"];?></p>
+										<button href="./vistas/descriptionLibro.php?id=<?php echo $row["id"];?>" class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">VER</button>
 									</div>
 								</div>
-
-						<!-- slide 3-->
-								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
-									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
-										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
-
-										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="../images/libro.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
-										</div>
-									</div>
-									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]">Libro 3</h2>
-										<p class=" text-sm text-[#707070] text-center">descripción</p>
-										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
-									</div>
-								</div>
-						<!-- slide 4-->
-								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
-									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
-										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
-
-										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="../images/cartel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
-										</div>
-									</div>
-									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]">Libro 4</h2>
-										<p class=" text-sm text-[#707070] text-center">descripción</p>
-										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
-									</div>
-								</div>
-						<!-- slide 5-->
-								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
-									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
-										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
-
-										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="../images/cel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
-										</div>
-									</div>
-									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]">Libro 5</h2>
-										<p class=" text-sm text-[#707070] text-center">descripción</p>
-										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
-									</div>
-								</div>								
+								<?php 
+									}
+									mysqli_free_result($resultado);
+								?>								
 							</div>
 							<div class="swiper-button-next"></div>
 							<div class="swiper-button-prev"></div>
@@ -192,7 +117,7 @@
 					<h2 class="text-lg font-medium text-[#333] pl-[70px] pt-[50px]">
 						Clasificación 2
 					</h2>
-					<div class="slide-container max-w-[980px] w-full  px-0 py-2 swiper">
+					<div class="slide-container max-w-[1500px] w-full  px-0 py-2 swiper">
 						<div class="slide-content mx-10 my-0 overflow-hidden">
 							<div class="card-wrapper swiper-wrapper">
 						<!-- slide 1-->
@@ -201,7 +126,7 @@
 										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
 
 										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="../images/logo.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+											<img src="./images/logo.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
 										</div>
 									</div>
 									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
@@ -217,7 +142,7 @@
 										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
 
 										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="../images/remera.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+											<img src="./images/remera.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
 										</div>
 									</div>
 									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
@@ -233,7 +158,7 @@
 										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
 
 										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="../images/libro.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+											<img src="./images/libro.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
 										</div>
 									</div>
 									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
@@ -248,7 +173,7 @@
 										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
 
 										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="../images/cartel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+											<img src="./images/cartel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
 										</div>
 									</div>
 									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
@@ -263,7 +188,7 @@
 										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
 
 										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="../images/cel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+											<img src="./images/cel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
 										</div>
 									</div>
 									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
@@ -279,21 +204,19 @@
 						</div>
 				</div>	
 			</div>
-
 			<footer class="bg-gradient-to-r from-blue-200 to-blue-100">
 				<div class="pt-[100px]">
 
 				</div>
 			</footer>
-			
-			
-		</body>
-	</form>
 
-	<script src= "../images/swiper-bundle.min.js"></script>
+
+	</body>
+
+	<script src= "./images/swiper-bundle.min.js"></script>
 	<script>
 		var swiper = new Swiper(".slide-content",{
-			slidesPerView: 3,
+			slidesPerView: 5,
 			spaceBetween: 25,
 			slidesPerGroup:3,
 
@@ -310,7 +233,7 @@
 				prevEl: ".swiper-button-prev",
 			},
 		});
+
 	</script>
 	
 </html>
-

@@ -1,4 +1,5 @@
 <?php
+
 class BasedeDatos {
     const servidor = "localhost";
     const user = "root";
