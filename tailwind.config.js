@@ -1,13 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["PHPLab/*.{html,js,php}"],
+  content: ["PHP_Lab/*.{html,js,php}"],
   theme: {
-    extend: {
-      backgroundImage: {
-        'header': "url('../images/images.png')"
-      }
-    },
+    extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 

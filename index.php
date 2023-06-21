@@ -1,241 +1,70 @@
-
-<?php
-include("./models/Conex.php"); 
-$conex = Conectarse();
-$libro = "SELECT * FROM libro";
-//$conexion = new Conexion();
-//$conex = $conexion->Conectar();
-/*
-include_once './models/Conex.php';
-$objeto = new Conexion();
-$conexion = $objeto->Conectar(); 
-
-$consulta = "SELECT titulo, descripcion, imagen FROM libro";
-$resultado = $conexion->prepare($consulta);
-$resultado->execute();
-$data = $resultado->fetchAll(PDO::FETCH_ASSOC);
-*/
-
-?>
-
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
- 		<link href="./dist/output.css" rel="stylesheet">
-		 <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.20/dist/full.css" rel="stylesheet" type="text/css" />
-         <script src="https://cdn.tailwindcss.com"></script>
-         <link rel="stylesheet" href="./images/swiper-bundle.min.css">
-		 <title>SeaBook</title>
-	</head>
-	<body >
-			<header class= "px-3 py-4 flex items-center justify-between bg-cover bg-center bg-opacity-100 bg-[url('./images/libro.png')]">   						
-				<div class="justify-self-end m-[0px] ">
-					<a href="./vistas/login.php"  class="px-6 py-2.5 bg-blue-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-						Login
-					</a>              
-					<a href="#" class="px-6 py-2.5 bg-blue-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-						Sign up
-					</a>          	
-				</div>	
-				<div class="m-[0px] flex">
-					<h1 class="font-bold text-black text-7xl pl-[15px] pr-2 font-black text-gray-900 dark:text-white drop-shadow-2xl">SeaBook</h1>
-					<img src ="./images/logo.png" style="width:70px;height:70px;" class="pl-2">
-				</div>				
-				<div class="m-[0px]">		
-					<input class= "placeholder:italic placeholder:text-slate-400 block bg-white w-[100px] border border-slate-300 rounded-md shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search..." type="text" name="search"/>                                     <!--"placeholder:italic placeholder:text-slate-400 block bg-white w-20 border border-slate-300 rounded-md py-0.5 pl-9 pr-0.5 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" -->
-				</div>
-			</header>
 
-			<div class="grid grid-cols-1 flex items-center justify-center bg-gradient-to-r from-blue-200 to-blue-100   ">
-<!-- carrousel imagenes -->
-				<div id="default-carousel" class="relative h-[290px] w-full "  data-carousel="slide">
-					<!-- Carousel wrapper -->
-					<div class="relative h-56 overflow-hidden rounded-lg md:h-[290px]">
-						 <!-- Item 1 -->
-						<div class="  duration-100 ease-in-out" data-carousel-item active >
-							<img src="./images/logo.png" class="absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-						</div>
-						<!-- Item 2 -->
-						<div class="  duration-100 ease-in-out" data-carousel-item active >
-							<img src="./images/libro.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-						</div>
-						<!-- Item 3 -->
-						<div class="  duration-100 ease-in-out" data-carousel-item active>
-							<img src="./images/remera.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-						</div>
-						<!-- Item 4 -->
-						<div class="  duration-100 ease-in-out" data-carousel-item active>
-							<img src="./images/cel.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-						</div>
-						<!-- Item 5 -->
-						<div class="  duration-100 ease-in-out" data-carousel-item active>
-							<img src="./images/cartel.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../dist/output.css" rel="stylesheet">
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+		<script src="https://cdn.tailwindcss.com"></script>
+        <title>SeaBook</title>
+	</head>
+    <body>
+        <div class="modal  h-screen w-full fixed left-0 top-0 flex justify-center item-center bg-black bg-opacity-50 ">
+				<div class="bg-center  w-[800px] bg-[url('./images/libro.png')] ">
+					<div class=" flex flex-col items-center justify-center px-6 py-8 bg-bl mx-auto md:h-screen lg:py-0">
+						<a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+							<img class="w-11 h-11 mr-2" src="./images/logo.png" alt="logo">SeaBook    
+						</a>
+						<div class="w-full bg-gray-800 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+							<div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+								<h1 class="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
+									Inicia sesión con tu cuenta
+								</h1>
+								<form class="space-y-4 md:space-y-6" action="#">
+									<div>
+										<label for="nickname" class="block mb-2 text-sm font-medium text-white dark:text-white">
+											Nickname
+										</label>
+										<input type="nickname" name="nickname" id="nickname" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nickname" required="">
+									</div>
+									<div>
+										<label for="password" class="block mb-2 text-sm font-medium text-white dark:text-white">
+											Contraseña
+										</label>
+										<input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+									</div>
+									<div class="flex items-center justify-between">
+										<div class="flex items-start">
+											<div class="flex items-center h-5">
+												<input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+											</div>
+											<div class="ml-3 text-sm">
+												<label for="remember" class="text-gray-500 dark:text-gray-300">
+													Recordar
+												</label>
+											</div>
+										</div>
+											<a href="#" class="text-sm font-medium text-white hover:underline dark:text-primary-500">
+												¿Has olvidado tu contraseña?
+											</a>
+									</div>
+									<button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Iniciar sesión</button>
+									<p class="text-sm font-light text-gray-500 dark:text-gray-400">
+										¿Aún no tienes cuenta? 	
+										<a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
+											Registrarse
+										</a> 
+									</p>
+								</form>
+							</div>
 						</div>
 					</div>
-
 				</div>
-
-<!-- slider     --><h2 class="text-lg font-medium text-[#333] pl-[70px] pt-[50px]">
-						Clasificación 1
-					</h2>
-					<div class="slide-container max-w-[1500px] w-full  px-0 py-0 swiper">
-						<div class="slide-content mx-10 my-5 overflow-hidden">
-							<div class="card-wrapper swiper-wrapper">
-								<?php
-									
-									for($i=0;$i<count($pd);$i++) {
-								?>
-			<!-- slide 1-->
-								<div class="card bg-white rounded-[25px] swiper-slide">
-									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
-										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
-										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="data:image/png;base64,<?php echo base64_encode($pd[$i]['imagen']); ?>" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
-										</div>
-									</div>
-									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]"><?php echo $pd[$i]["titulo"]; ?></h2>
-										<p class=" text-sm text-[#707070] text-center"><?php echo $pd[$i]["descripcion"];?></p>
-										<a href="./vistas/descriptionLibro.php">
-											<button id=<?php echo $pd[$i]["id"];?>" class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">VER</button>
-										</a>
-									</div>
-									<?php
-										}
-									?>
-								</div>
-													
-							</div>
-							<div class="swiper-button-next"></div>
-							<div class="swiper-button-prev"></div>
-							<div class="swiper-pagination"></div>
-						</div>
-					</div>		
-<!-- slider     -->
-					<h2 class="text-lg font-medium text-[#333] pl-[70px] pt-[50px]">
-						Clasificación 2
-					</h2>
-					<div class="slide-container max-w-[1500px] w-full  px-0 py-2 swiper">
-						<div class="slide-content mx-10 my-0 overflow-hidden">
-							<div class="card-wrapper swiper-wrapper">
-						<!-- slide 1-->
-								<div class="card bg-white rounded-[25px] swiper-slide">
-									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
-										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
-
-										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="./images/logo.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
-										</div>
-									</div>
-									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]">Libro 1</h2>
-										<p class=" text-sm text-[#707070] text-center">descripción</p>
-										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
-									</div>
-								</div>
-
-						<!-- slide 2-->
-								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
-									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
-										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
-
-										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="./images/remera.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
-										</div>
-									</div>
-									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]">Libro 2</h2>
-										<p class=" text-sm text-[#707070] text-center">descripción</p>
-										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
-									</div>
-								</div>
-
-						<!-- slide 3-->
-								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
-									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
-										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
-
-										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="./images/libro.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
-										</div>
-									</div>
-									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]">Libro 3</h2>
-										<p class=" text-sm text-[#707070] text-center">descripción</p>
-										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
-									</div>
-								</div>
-						<!-- slide 4-->
-								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
-									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
-										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
-
-										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="./images/cartel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
-										</div>
-									</div>
-									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]">Libro 4</h2>
-										<p class=" text-sm text-[#707070] text-center">descripción</p>
-										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
-									</div>
-								</div>
-						<!-- slide 5-->
-								<div class="card bg-white rounded-[25px] w-80 swiper-slide">
-									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
-										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
-
-										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="./images/cel.png" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
-										</div>
-									</div>
-									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]">Libro 5</h2>
-										<p class=" text-sm text-[#707070] text-center">descripción</p>
-										<button class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">PRESTAR</button>
-									</div>
-								</div>								
-							</div>
-							<div class="swiper-button-next"></div>
-							<div class="swiper-button-prev"></div>
-							<div class="swiper-pagination"></div>
-						</div>
-				</div>	
 			</div>
-			<footer class="bg-gradient-to-r from-blue-200 to-blue-100">
-				<div class="pt-[100px]">
-
-				</div>
-			</footer>
-
-
-	</body>
-
-	<script src= "./images/swiper-bundle.min.js"></script>
-	<script>
-		var swiper = new Swiper(".slide-content",{
-			slidesPerView: 5,
-			spaceBetween: 25,
-			slidesPerGroup:3,
-
-			centerSlide: 'true',
-			fade: 'true',
-			grabCursor: 'true',
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true,
-				dynamicBullets: true,
-			},
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-		});
-
-	</script>
-	
+		</div>
+   </body>
 </html>
+
+
+  
