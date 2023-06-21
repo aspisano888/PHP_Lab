@@ -85,28 +85,30 @@ $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
 					<div class="slide-container max-w-[1500px] w-full  px-0 py-0 swiper">
 						<div class="slide-content mx-10 my-5 overflow-hidden">
 							<div class="card-wrapper swiper-wrapper">
-			<!-- slide 1-->
-								<?php	
-									$resultado=mysqli_query($conex, $libro);
-									while($row= mysqli_fetch_assoc($resultado)){	
+								<?php
+									
+									for($i=0;$i<count($pd);$i++) {
 								?>
+			<!-- slide 1-->
 								<div class="card bg-white rounded-[25px] swiper-slide">
 									<div class="image-content flex flex-col items-center px-3.5 py-2.5 gap-y-[5px] relative px-0 py-[25px]">
 										<span class="overlay absolute h-full w-full bg-[#4070F4] left-0 top-0 rounded-[25px_25px_0_25px]"></span>
 										<div class="relative h-[150px] w-[150px] rounded-[50%] bg-[#EFEFEF] p-[3px]">
-											<img src="data:image/png;base64,<?php echo base64_encode($row['imagen']); ?>" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
+											<img src="data:image/png;base64,<?php echo base64_encode($pd[$i]['imagen']); ?>" alt="" class="h-full w-full object-cover rounded-[50%] rounded-[50%] border-4 border-solid border-[#4070F4]">
 										</div>
 									</div>
 									<div class="card-content flex flex-col items-center px-3.5 py-2.5">
-										<h2 class="text-lg font-medium text-[#333]"><?php echo $row["titulo"];?></h2>
-										<p class=" text-sm text-[#707070] text-center"><?php echo $row["descripcion"];?></p>
-										<button href="./vistas/descriptionLibro.php?id=<?php echo $row["id"];?>" class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">VER</button>
+										<h2 class="text-lg font-medium text-[#333]"><?php echo $pd[$i]["titulo"]; ?></h2>
+										<p class=" text-sm text-[#707070] text-center"><?php echo $pd[$i]["descripcion"];?></p>
+										<a href="./vistas/descriptionLibro.php">
+											<button id=<?php echo $pd[$i]["id"];?>" class=" bg-[#4070F4] text-base text-white m-3.5 px-4 py-2 rounded-md border-[none] cursor-pointer transition-all duration-[0.3s] ease-[ease]">VER</button>
+										</a>
 									</div>
+									<?php
+										}
+									?>
 								</div>
-								<?php 
-									}
-									mysqli_free_result($resultado);
-								?>								
+													
 							</div>
 							<div class="swiper-button-next"></div>
 							<div class="swiper-button-prev"></div>

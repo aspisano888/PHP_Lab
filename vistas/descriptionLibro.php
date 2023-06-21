@@ -8,10 +8,9 @@ $libro = $_GET["row"];
     <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="../dist/output.css" rel="stylesheet">
-
      <title><?php echo $libro.["titulo"]?>></title>
      <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.20/dist/full.css" rel="stylesheet" type="text/css" />
-        <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
