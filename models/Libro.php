@@ -1,76 +1,54 @@
 <?php
     class Libro {
         private $dbh;
-
-        public $id;
-        public $titulo;
-        public $editorial;
-        public $isbn;
-        public $autor;
-        public $categoria;
-        public $estado;
-        public $descripcion;
-        public $images;
-
-
-        function newLibro ($id, $titulo, $editorial, $isbn, $autor, $categoria, $estado) {
-            $this->titulo=$titulo;
-            $this->editorial=$editorial;
-            $this->isbn=$isbn; 
-            $this->categoria=$categoria;
-            $this->autor=$autor; 
-            $this->estado=$estado;
+        private $libro;
+        
+        public function __construct() {
+            $this->libro = array();
+            $this->dbh = new PDO('mysql:host=localhost;dbname=php_labdb', "root", "");
         }
 
-        //setters
+        private function set_names() {
+            return $this->dbh->query("SET NAMES 'latin1'");
+        }
+        
+        public function listarLibros () { 
+            $lib = "SELECT * FROM libro";
 
-        function set_titulo($titulo){ 
-            $this->titulo=$titulo; 
-        } 
-              
-        function set_editorial($editorial){ 
-            $this->editorial=$editorial; 
-        } 
-               
-        function set_isbn($isbn){ 
-            $this->isbn=$isbn; 
-        } 
+            self::set_names();
+            foreach ($this->dbh->query($lib) as $res){
+                $this->libro[]=$res;
+            }
+            return $this->libro;
+            $this->dbh=null;
+
+        }
+
+        public function infoLibro (int $id) { 
+            $lib = "SELECT * FROM libro WHERE id='$id'";
+
+            self::set_names();
+            foreach ($this->dbh->query($lib) as $res){
+                $this->libro[]=$res;
+            }
+            return $this->libro;
+            $this->dbh=null;
+        }
+
+        public function editarLibro ($Titulo, $Editorial, $Isbn, $Autor, $Descripcion, $id){
+            try { 
+                $this->dbh->query("UPDATE libro SET titulo='$Titulo', editorial='$Editorial', isbn='$Isbn', autor='$Autor', descripcion='$Descripcion' WHERE id='$id'");
                 
-        function set_categoria($categoria){ 
-            $this->categoria=$categoria; 
-        } 
-        
-        function set_autor($autor){ 
-            $this->autor=$autor; 
-        } 
-
-        function set_estado($estado){ 
-            $this->estado=$estado; 
-        } 
-
-        //getters
-
-
-        function get_titulo(){ 
-            return $this->titulo; 
+            } catch (mysqli_sql_exception $e) { 
+               var_dump($e);
+               exit; 
+            } 
         }
 
-        function get_editorial(){ 
-            return $this->editorial; 
-        }
-        
-        function get_isbn(){ 
-            return $this->isbn; 
-        }
-        
-        function get_autor(){ 
-            return $this->autor; 
-        }
-        
-        function get_categoria(){ 
-            return $this->categoria; 
-        }
-        
+        public function eliminarLibro ($id){
+            $this->dbh->query("DELETE FROM libro WHERE id='$id'");     
+         }
+
         
     }
     

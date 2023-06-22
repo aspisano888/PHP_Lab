@@ -19,9 +19,9 @@ class Conexion {
 	}
 }*/
 
-	$conex = mysqli_connect("localhost", "root", "", "php_labdb");
+	$conex = mysqli_connect("localhost","root","", "php_labdb");
 	mysqli_set_charset($conex, "utf8");
-
+/*
 function Conectarse() { 
 	$dbhost= "localhost"; 
 	$dbuser= "root"; 
@@ -33,6 +33,6 @@ function Conectarse() {
 	} else {
 		return $link; 
 	}
-} 
+} */
 
 ?>

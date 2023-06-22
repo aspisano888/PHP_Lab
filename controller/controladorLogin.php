@@ -1,21 +1,22 @@
 <?php
 
-/*
-public function login()
-    {
-       if (empty($_POST['usuario']) || empty($_POST['clave'])) {
-            $usuario = $_POST['usuario'];
-            $clave = $_POST['clave'];
+require_once("login.php");
+
+       if (empty($_POST['nickname']) || empty($_POST['password'])) {
+            $usuario = $_POST['nickname'];
+            $clave = $_POST['password'];
             $data = $this->model->selectUsuario($usuario, $clave);
             if (!empty($data)) {
-                if (password_verify($clave, $data['clave'])) {
-                    $_SESSION['id'] = $data['id'];
+                if (password_verify($clave, $data['password'])) {
+                    require_once("vistas/home.php");
+                 
+                    /*   $_SESSION['id'] = $data['id'];
                     $_SESSION['nombre'] = $data['nombre'];
                     $_SESSION['usuario'] = $data['usuario'];
                     $_SESSION['correo'] = $data['correo'];
                     $_SESSION['rol'] = $data['rol'];
                     $_SESSION['activo'] = true;
-                    header("location: Productos/Listar");
+                    header("location: Productos/Listar");*/
                 } else {
                     $data['error'] = "Las Contraseñas no coinciden";
                     print_r($data);
@@ -27,6 +28,6 @@ public function login()
                 //$this->views->getView($this, "home");
             }
        }
-    }
-*/
+
+
     ?>
