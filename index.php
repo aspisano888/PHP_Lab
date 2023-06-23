@@ -7,8 +7,9 @@
         <link href="../dist/output.css" rel="stylesheet">
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
 		<script src="https://cdn.tailwindcss.com"></script>
-        <title>SeaBook</title>
+        <title>SeaBook</title>			
 	</head>
+	<form action="./controller/controlador.php" method= "POST">
     <body>
         <div class="modal  h-screen w-full fixed left-0 top-0 flex justify-center item-center bg-black bg-opacity-50 ">
 				<div class="bg-center  w-[800px] bg-[url('./images/libro.png')] ">
@@ -64,6 +65,7 @@
 			</div>
 		</div>
    </body>
+   </form>
 </html>
 
 
