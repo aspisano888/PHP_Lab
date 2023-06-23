@@ -1,63 +1,25 @@
 <?php
+    require_once("../index.php");
+    include '../models/User.php';
+    
+    if (empty($_POST['nickname']) || empty($_POST['password'])) {
+         $nombre = $_POST['nickname'];
+         $clave = $_POST['password'];
+         $user = new User;
 
-class controllerBook{
-
-    function LoginUserController(){
-        require '../views/index.php';
-
-        $nickname = $_GET['nickname'];
-        $password = $_GET['password'];
-        
-        $user = new User();
-        $user = $user->verificarCredenciales($nickname, $password);
-    // $query = "SELECT * FROM usuarios WHERE nombre = '" . $nickname . "' AND password = '" . $password . "'";
-    // $resultado = $conexion->query($query);
-        if ($existeUsuario) {
-            $tipo = user($nickname, $password);
-            // Obtén el tipo de usuario
-            $filaUsuario = $resultado->fetch_assoc();
-            $tipoUser = $filaUsuario['tipo'];
-            // Consulta los libros
-            $queryLibros = "SELECT * FROM libro";
-            $resultadoLibros = $conexion->query($queryLibros);
-
-            // Verificar si la consulta de libros fue exitosa
-            if ($resultadoLibros) {
-                $libros = [];
-                while ($filaLibro = $resultadoLibros->fetch_assoc()) {
-                    $libros[] = $filaLibro;
-                }  
-                if($tipoUser == "socio"){
-                    require '../vistas/homeSocio.php';
-                }else if ($tipoUser == "administrador"){
-                    require '../vistas/homeAdmin.php';
-                }else{
-                echo "Error!: " . $nickname . " no existe en el sistema";
-                }
-            }else{
-                echo "Error en la consulta: " . $conexion->error;
-            }
-        } else {
-            echo "Credenciales inválidas. El usuario no puede iniciar sesión.";
-            require '../index.php';
-            
-        }
-}
-}
-?>
-
-
-<?php
-
-class Controller{
-    public function home(){
-        require_once "../view/index.php";
-        $login = new Login();
-
-        $data["titulo"] = "Usuarios";
-        $data["usuarios"] = $users->getUsers();
-        require_once "../views/home.php";
+         if ($user->validarUsuario($nombre,$clave)) {
+            $tipo = $user->getTipo($nombre,$clave);
+             if ($tipo == "administrador") {
+                 require_once("views/homeAdmin.php");
+             } else {
+                require_once("views/homeSocio.php");
+             }
+         } else {
+             $existe['error'] = "El usuario no existe";
+             print_r($existe);
+         }
+    }else{
+        $error['mensaje'] = "El nickname o la contraseña no pueden estar vacios";
+        print_r($error);
     }
-} 
-
 ?>

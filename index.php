@@ -9,7 +9,7 @@
 		<script src="https://cdn.tailwindcss.com"></script>
         <title>SeaBook</title>			
 	</head>
-	<form action="./controller/controlador.php" method= "POST">
+	<form action="./controller/controllerLogin.php" method= "POST">
     <body>
         <div class="modal  h-screen w-full fixed left-0 top-0 flex justify-center item-center bg-black bg-opacity-50 ">
 				<div class="bg-center  w-[800px] bg-[url('./images/libro.png')] ">
