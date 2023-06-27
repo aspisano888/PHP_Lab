@@ -1,6 +1,6 @@
 <?php
-include_once("../vistas/edicion.php");
 
+include_once("../vistas/edicion.php");
 $id =$_POST['id'];
 $Titulo = $_POST['titulo'];
 $Editorial = $_POST['editorial'];

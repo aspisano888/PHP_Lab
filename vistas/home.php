@@ -1,7 +1,7 @@
 
 <?php
-include("../models/Conex.php");
-include_once("../controller/homeController.php");
+include("./models/Conex.php");
+include_once("./controller/homeController.php");
 
 ?>
 
@@ -19,10 +19,10 @@ include_once("../controller/homeController.php");
 		<title>SeaBook</title>
 	</head>
 	<body>				
-			<nav class="bg-white border-gray-200 dark:bg-gray-900 bg-cover bg-opacity-100 bg-[url('../images/libro.png')]">
+			<nav class="bg-white border-gray-200 dark:bg-gray-900 bg-cover bg-opacity-100 bg-[url('./images/libro.png')]">
 				<div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
 					<a href="./home.php" class="flex items-center">
-						<img src ="../images/logo.png" style="width:70px;height:70px" class="h-8 mr-3" alt="Flowbite Logo" />
+						<img src ="./images/logo.png" style="width:70px;height:70px" class="h-8 mr-3" alt="Flowbite Logo" />
 						<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SeaBook</span>
 					</a>
 					<div class="flex items-center md:order-2">
@@ -34,23 +34,23 @@ include_once("../controller/homeController.php");
 					</div>
 					<div id="mega-menu" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
 						<ul class="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
-							<li>
-								<a href="./listadoLibros.php" class="block py-2 pl-3 pr-4 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+							<li class="nav-item">
+								<a href="../index.php?view=listarLibros" class="nav-link block py-2 pl-3 pr-4 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
 									Listar
 								</a>
 							</li>
 							<li>
-								<a href="#" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+								<a href="./controller/addBookController.php" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
 									Agregar
 								</a>
 							</li>
 							<li>
-								<a href="./eliminarLibro.php" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+								<a href="./controller/listarLibController.php" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
 									Eliminar
 								</a>
 							</li>
 							<li>
-								<a href="./edicion.php" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+								<a href="./controller/listarLibController.php" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
 									Modificar
 								</a>
 							</li>
@@ -59,7 +59,7 @@ include_once("../controller/homeController.php");
 				</div>
 			</nav>
 		<div class=" grid grid-cols-1 flex items-center justify-center bg-gradient-to-r from-blue-200 to-blue-100">
-			<div class=" h-[290px] bg-cover bg-[url('../images/CYK4ES3RWVBFVEZKD3EZXHGPUQ.png')]">
+			<div class=" h-[290px] bg-cover bg-[url('./images/CYK4ES3RWVBFVEZKD3EZXHGPUQ.png')]">
 				<div class="relative h-56 overflow-hidden rounded-lg md:h-[290px]"></div>
 			</div>		
 				<?php	

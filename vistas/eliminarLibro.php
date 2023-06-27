@@ -1,6 +1,7 @@
 <?php
+//include("../controller/infoLibController.php");
+include("../controller/eliminarLibroController.php");
 $id = $_GET["id"];
-include("../controller/infoLibController.php");
 ?>
 
 
@@ -17,7 +18,7 @@ include("../controller/infoLibController.php");
 		<title>Eliminar Libros</title>
 	</head>
 	<body>
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 bg-cover bg-opacity-100 bg-[url('../images/libro.png')]">
+    	<nav class="bg-white border-gray-200 dark:bg-gray-900 bg-cover bg-opacity-100 bg-[url('../images/libro.png')]">
 				<div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
 					<a href="./home.php" class="flex items-center">
 						<img src ="../images/logo.png" style="width:70px;height:70px" class="h-8 mr-3" alt="Flowbite Logo" />
@@ -33,7 +34,7 @@ include("../controller/infoLibController.php");
 					<div id="mega-menu" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
 						<ul class="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
 							<li>
-								<a href="./listadoLibros.php" class="block py-2 pl-3 pr-4 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+								<a href="../controller/listarLibController.php" class="block py-2 pl-3 pr-4 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
 									Listar
 								</a>
 							</li>
@@ -43,27 +44,14 @@ include("../controller/infoLibController.php");
 								</a>
 							</li>
 							<li>
-								<a href="#" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
-									Eliminar
-								</a>
-							</li>
-							<li>
-								<a href="#" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+								<a href="../controller/editarLibroController.php" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
 									Modificar
 								</a>
 							</li>
 						</ul>
 					</div>
 				</div>
-			</nav>
-        <?php
-            for($i=0;$i<count($pd);$i++){
-                if ($pd[$i]["id"] == $id){
-        ?>
-                <h2>El libro <?php echo $pd[$i]["nombre"];?> fue eliminado correctamente</h2>
-        <?php
-                }
-            }
-        ?>
+		</nav>
+		<span class="self-center text-4xl font-semibold whitespace-nowrap dark:text-black">El libro eliminado correctamente</span>
     </body>
 </html>

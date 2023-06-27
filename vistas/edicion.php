@@ -70,26 +70,26 @@ include("../controller/infoLibController.php");
                             <td class="">Descripcion</td>
                         </tr>
                     </thead> 
-                <tbody>
-			<?php	
-				for($i=0;$i<count($pd);$i++){
-			?>
-            <tr>
-                <td><input type="hidden" class="table__input" value="<?php echo $pd[$i]["id"];?>" name="id"></td>
-                <td><input type="text" class="w-[90%] h-[100%] text-[1em] mr-2.5 mb-2.5 p-[5px]" value="<?php echo $pd[$i]["titulo"];?>" name="titulo"> </td>
-                <td><input type="text" class="table__input" value="<?php echo $pd[$i]["editorial"];?>" name="editorial"> </td>
-                <td><input type="text" class="table__input" value="<?php echo $pd[$i]["isbn"];?>" name="isbn"> </td>
-                <td><input type="text" class="table__input" value="<?php echo $pd[$i]["autor"];?>" name="autor"> </td>
-                <td><input type="text" class="table__input" value="<?php echo $pd[$i]["descripcion"];?>" name="descripcion"> </td>
-                <?php 
-                    }
-                ?>
-                <td><input type="submit" value="Actualizar" class="container__submit container__submit_actualizar"></td>
-            <tr>
-		</form>
-        </tfoot>
-            </table>
-        </div>
+                	<tbody>
+						<?php	
+							for($i=0;$i<count($pd);$i++){
+						?>
+						<tr>
+							<td><input type="hidden" class="table__input" value="<?php echo $pd[$i]["id"];?>" name="id"></td>
+							<td><input type="text" class="w-[90%] h-[100%] text-[1em] mr-2.5 mb-2.5 p-[5px]" value="<?php echo $pd[$i]["titulo"];?>" name="titulo"> </td>
+							<td><input type="text" class="table__input" value="<?php echo $pd[$i]["editorial"];?>" name="editorial"> </td>
+							<td><input type="text" class="table__input" value="<?php echo $pd[$i]["isbn"];?>" name="isbn"> </td>
+							<td><input type="text" class="table__input" value="<?php echo $pd[$i]["autor"];?>" name="autor"> </td>
+							<td><input type="text" class="table__input" value="<?php echo $pd[$i]["descripcion"];?>" name="descripcion"> </td>
+							<?php 
+								}
+							?>
+							<td><input type="submit" value="Actualizar" class="container__submit container__submit_actualizar"></td>
+						<tr>
+					</tfoot>
+            	</table>
+        	</div>
+	</form>
     </body>
 </html>
 

@@ -1,7 +1,5 @@
 <?php 
 
-//include("../models/Conex.php"); 
-//$libro = "SELECT * FROM libro";
 include("../controller/listarLibController.php");
 ?>
 
@@ -21,7 +19,7 @@ include("../controller/listarLibController.php");
 	<body>
     <nav class="bg-white border-gray-200 dark:bg-gray-900 bg-cover bg-opacity-100 bg-[url('../images/libro.png')]">
 				<div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
-					<a href="./home.php" class="flex items-center">
+					<a href="../controller/homeController.php" class="flex items-center">
 						<img src ="../images/logo.png" style="width:70px;height:70px" class="h-8 mr-3" alt="Flowbite Logo" />
 						<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SeaBook</span>
 					</a>
@@ -35,23 +33,8 @@ include("../controller/listarLibController.php");
 					<div id="mega-menu" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
 						<ul class="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
 							<li>
-								<a href="./listadoLibros.php" class="block py-2 pl-3 pr-4 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
-									Listar
-								</a>
-							</li>
-							<li>
 								<a href="#" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
 									Agregar
-								</a>
-							</li>
-							<li>
-								<a href="#" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
-									Eliminar
-								</a>
-							</li>
-							<li>
-								<a href="#" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
-									Modificar
 								</a>
 							</li>
 						</ul>
@@ -77,15 +60,15 @@ include("../controller/listarLibController.php");
                         <td class="">
 							<figure class=""><img src="data:image/png;base64,<?php echo base64_encode($pd[$i]['imagen']);?>" class="border-2 border-solid border-[#4070F4] max-w-[70px] h-full w-full " /></figure>
                         </td>
-                        <th class="pl-0"><?php  echo $pd[$i]["titulo"];?></th> 
+                        <th class="pl-0"><?php echo $pd[$i]["titulo"];?></th> 
                         <td><?php echo $pd[$i]["editorial"];?></td> 
-                        <td><?php  echo $pd[$i]["isbn"];?></td> 
+                        <td><?php echo $pd[$i]["isbn"];?></td> 
                         <td><?php echo $pd[$i]["autor"];?></td> 
                         <td >
-                            <a href="edicion.php?id=<?php  echo $pd[$i]["id"];?>">Editar</a>
+                            <a href="../controller/editarLibroController.php?id=<?php echo $pd[$i]["id"];?>">Editar</a>
                         </td>
                         <td >
-                            <a href="eliminarLibro.php?id=<?php echo $pd[$i]["id"];?>">Eliminar</a>
+                            <a href="../controller/eliminarLibroController.php?id=<?php echo $pd[$i]["id"];?>">Eliminar</a>
                         </td>
                     </tr>
                     <?php

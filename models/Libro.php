@@ -49,6 +49,9 @@
             $this->dbh->query("DELETE FROM libro WHERE id='$id'");     
          }
 
+         public function agregarLibro ($Titulo, $Editorial, $Isbn, $Autor, $Imagen, $Descripcion){
+            $this->dbh->query("INSERT INTO libro (titulo, editorial, isbn, autor, imagen, descripcion) VALUES  ('$Titulo', '$Editorial', '$Isbn', '$Autor', '$Imagen', '$Descripcion')");     
+         }
         
     }
     
