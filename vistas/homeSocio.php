@@ -61,7 +61,7 @@ include_once("./controller/homeController.php");
 					<div class="p-4 max-w-sm">
 						<div class="flex rounded-lg h-full border-4 bg-blue-300  p-2 flex-col">
 							<div class="flex items-center mb-3">
-                                <a href="./controller/descripcionLibroController.php?id=<?php echo $pd[$j]["id"];?>" class="mt-3 text-black hover:text-blue-600 inline-flex items-center">
+                                <a href="./index.php?view=descripcionLibro?id=<?php echo $pd[$j]["id"];?>" class="mt-3 text-black hover:text-blue-600 inline-flex items-center">
 								    <figure  class=""><img src="data:image/png;base64,<?php echo base64_encode($pd[$j]['imagen']); ?>" class="h-full w-full  border-4 border-solid max-w-[150px] w-full  px-0 py-0" alt="car!"/></figure>
                                 </a>
 							</div>
