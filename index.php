@@ -20,10 +20,9 @@ if (isset($_SESSION) && isset($_GET['view'])) {
             include_once './controller/eliminarModificarController.php';
             $vista = "eliminarModificarLibro";
             break;
-        case 'eliminarLibro':
-            include_once './controller/eliminarModificarController.php';
-            $vista = "eliminarModificarLibro";
-            break;
+		case 'prestarLibroSocio':
+			include_once './controller/descripcionLibroController.php';
+			$vista = "descripcionLibro";
         case 'homeAdmin':
             include_once './models/Libro.php';
             $vista = "homeAdmin";

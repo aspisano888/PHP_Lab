@@ -2,60 +2,37 @@
 
 
     class Prestamo {
-        public $id;
-        public $usuarioId;
-        public $libroId;
-        public $bibliotecaId;
-        public $fechaPrestamo;
+        private $dbh;
+        private $socioId;
+        private $libroId;
+        private $fechaPrestamo;
+
     
         //constructor
-
-        function newUsuario ($usuarioId, $libroId, $bibliotecaId, $fechaPrestamo) {
-            $this->usuarioId=$usuarioId;
-            $this->libroId=$libroId;
-            $this->bibliotecaId=$bibliotecaId;
-            $this->fechaPrestamo=$fechaPrestamo;
+        public function __construct($socioId, $libroId) {
+            $this->libroId = array();
+            $this->dbh = new PDO('mysql:host=localhost;dbname=php_labdb', "root", "");
+            $this->socioId = $socioId;
+            $this->libroId = $libroId;
         }
 
-        //setters
-
-        function set_usuarioId($usuarioId){ 
-            $this->usuarioId=$usuarioId; 
-        } 
-        
-        
-        function set_libroId($libroId){ 
-            $this->libroId=$libroId; 
-        } 
-        
-        
-        function set_bibliotecaId($bibliotecaId){ 
-            $this->bibliotecaId=$bibliotecaId; 
-        } 
-        
-        
-        function set_fechaPrestamo($fechaPrestamo){ 
-            $this->fechaPrestamo=$fechaPrestamo; 
-        } 
-
-        //getters
-
-        function get_libroId(){ 
-            return $this->libroId; 
+        private function set_names() {
+            return $this->dbh->query("SET NAMES 'latin1'");
         }
-        
-        function get_bibliotecaId(){ 
-            return $this->bibliotecaId; 
-        }
-        
-        function get_fechaPrestamo(){ 
-            return $this->fechaPrestamo; 
-        }
-        
-        
-        function destruct () {}
 
+        public function verificarPrestamos(){
+            $prestado = false;
+            $sql = "SELECT * FROM prestamo WHERE idLibro='$this->libroId' AND idUsuario= '$this->socioId'";
+            $statement = $this->dbh->prepare($sql);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            if (count($result) > 0) $prestado = true;
+            return $prestado;
+        }
+
+        public function prestarLibroSocio(){
+            $this->fechaPrestamo = date("Y-m-d");
+            $this->dbh->query("INSERT INTO prestamo (idLibro,idUsuario,fechaPrestamo)VALUES ('$this->libroId', '$this->socioId', '$this->fechaPrestamo')");
+        }
     }
-    
-    
 ?>

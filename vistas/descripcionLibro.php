@@ -46,7 +46,9 @@
             <div class="w-1/2 not-italic text-2xl text-blue-950">
                 <p><?php echo $pd[$i]["descripcion"]?></p>
             </div>
-            <button class="btn btn-success mt-10 w-32">PRESTAR</button>
+            <a href = "./controller/prestarLibroSocioController.php?;?>" action="<?php echo $_SESSION['libro'] = ($pd[$i]["id"]);?>">
+                <button class="btn btn-success mt-10 w-32">PRESTAR</button>      
+             </a>
        
         </div>
     </div>
