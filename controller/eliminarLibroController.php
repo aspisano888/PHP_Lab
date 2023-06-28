@@ -6,6 +6,6 @@ $libro = new Libro();
 $pd2 = $libro->infoLibro($id);
 $libro->eliminarLibro($id);
 $pd = $libro->listarLibros();
-require_once("../vistas/eliminarLibro.php");
+require_once("../index.php?view=listadoLibros");
 
 ?>

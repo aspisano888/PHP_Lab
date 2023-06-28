@@ -1,8 +1,10 @@
 <?php
 
-require_once("../models/Libro.php");
+require_once("./models/Libro.php");
 $libro = new Libro();
-$pd = $libro->listarLibros();
-require_once("../vistas/listadoLibros.php");
-
+if ($_SESSION['tipo'] == 'administrador'){
+    $pd = $libro->listarLibros();
+} else {
+    $pd = $libro->listarLibrosSocio($_SESSION['id']);
+}
 ?>

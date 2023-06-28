@@ -24,6 +24,17 @@
 
         }
 
+        public function listarLibrosSocio ($id) { 
+            $lib = "SELECT * FROM libro as l JOIN prestamo as p WHERE p.idUsuario='$id' AND l.id = p.idLibro";
+
+            self::set_names();
+            foreach ($this->dbh->query($lib) as $res){
+                $this->libro[]=$res;
+            }
+            return $this->libro;
+            $this->dbh=null;
+        }
+
         public function infoLibro (int $id) { 
             $lib = "SELECT * FROM libro WHERE id='$id'";
 

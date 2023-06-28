@@ -1,6 +1,6 @@
 <?php
 
-include_once("../controller/addBookController.php");
+//include_once("../controller/addBookController.php");
 
 ?>
 
@@ -17,11 +17,11 @@ include_once("../controller/addBookController.php");
 		<script src="../js/util.js"></script>
 		<title>SeaBook</title>
 	</head>			
-			<nav class="bg-white border-gray-200 dark:bg-gray-900 bg-cover bg-opacity-100 bg-[url('../images/libro.png')]">
+			<nav class="bg-white border-gray-200 dark:bg-gray-900 bg-cover bg-opacity-100 bg-[url('./images/libro.png')]">
 				<div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
-					<a href="./home.php" class="flex items-center">
-						<img src ="../images/logo.png" style="width:70px;height:70px" class="h-8 mr-3" alt="Flowbite Logo" />
-						<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SeaBook</span>
+					<a href="./index.php?view=<?php echo $_SESSION['home']?>" class="flex items-center">
+						<img src ="./images/logo.png" style="width:70px;height:70px" class="h-8 mr-3" alt="Flowbite Logo" />
+						<span class="self-center text-5xl font-semibold whitespace-nowrap dark:text-white">SeaBook</span>
 					</a>
 					<div class="flex items-center md:order-2">
 						<a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign out</a>

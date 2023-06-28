@@ -1,16 +1,15 @@
+
 <?php
-class MInicioSesion {
+class Login  {
     private $db;
     private $usuarios;
     private $pass;
-
-    private static $clave = "clavePhp2023";
-    private static $rnd = "1234567890123456";
+    private $retorno;
 
     public function __construct($conexion, $usuarios, $pass) {
         $this->db = $conexion;
-        $this->usuarios = $this->limpiarInput($usuarios);
-        $this->pass = $this->encriptar($pass);
+        $this->usuarios = $usuarios;
+        $this->pass = $pass;
     }
 
     private function limpiarInput($data) {
@@ -28,32 +27,19 @@ class MInicioSesion {
         return $retorno;
     }
 
-    public function iniciarSesion($nombre,$pass) : array {
-        $retorno = [];
+    public function iniciarSesion() {
+        //$retorno = [];
         $query = "SELECT 
                     id,
-                    nombre,
-                    apellido
+                    tipo
                     FROM usuario
-                    WHERE nombre = '$nombre' 
-                    AND contraseña = '$pass'";
+                    WHERE nombre = '$this->usuarios' 
+                    AND contraseña = '$this->pass'";
         $statement = $this->db->prepare($query);
         $statement->execute();
-        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-        if (count($result) === 1)
-            $retorno = $result;
-        return $retorno;
-    }
-    public function retornoHash() : string {
-        return $this->pass;
-    }
-    private function encriptar($p)
-    {
-        return openssl_encrypt($p, 'AES-256-CBC', self::$clave, 0, self::$rnd);
-    }
-
-    private function desencriptar($p)
-    {
-        return openssl_decrypt($p, 'AES-256-CBC', self::$clave, 0, self::$rnd);
+        $result = $statement->fetchAll();
+       // if (count($result) === 1)
+            $this->retorno = $result;
+        return $this->retorno;
     }
 }
