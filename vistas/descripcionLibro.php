@@ -37,8 +37,8 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-        <div>
+    </nav>
+    <div>
     <div class="flex bg-white py-2 px-32">
         <img src="data:image/png;base64,<?php echo base64_encode($pd[$i]['imagen']); ?>"  alt="">
         <div class="px-32">
@@ -47,9 +47,9 @@
             <div class="w-1/2 not-italic text-2xl text-blue-950">
                 <p><?php echo $pd[$i]["descripcion"]?></p>
             </div>
-            <a href = "../controller/prestarLibroSocioController.php">
+            <a href="./index.php?view=prestarLibro&titulo=<?php echo $pd[$i]["titulo"]?>&id=<?php echo $pd[$i]["id"]?>" >
             
-                <button class="btn btn-success mt-10 w-32">PRESTAR</button>      
+                <button type="submit" class="btn btn-success mt-10 w-32">PRESTAR</button>      
              </a>
        
         </div>

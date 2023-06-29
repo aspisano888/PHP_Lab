@@ -8,11 +8,14 @@ if (isset($_SESSION) && isset($_GET['view'])) {
 
     switch ($_GET['view']) {
         case 'listarLibros':
-			include_once './controller/prestarLibroSocioController.php';
             include_once './controller/listarLibController.php';
-            $vista = "listadoLibros";
+            if($_SESSION['tipo']=="administrador"){
+                $vista = "listadoLibros";
+            }else{
+                $vista = "listarPrestamos";
+            }
             break;
-            case 'procesarAgregado':
+        case 'procesarAgregado':
                 include_once './controller/addBookController.php';
                 $vista = "listadoLibros";
                 break;
@@ -20,9 +23,11 @@ if (isset($_SESSION) && isset($_GET['view'])) {
             include_once './controller/nuevoLibroController.php';
             $vista = "addBook";
             break;
-        case 'descripcionLibro':
-                include_once './controller/descripcionLibroController.php';			
-				$vista = "descripcionLibro";
+        case 'prestarLibro':
+                $_SESSION['idLibro']= $_GET['id'];
+                $_SESSION['titulo']= $_GET['titulo'];
+                include_once './controller/prestarLibroSocioController.php';
+				$vista = "listarPrestamos";
 				break;
         case 'eliminarLibro':
             include_once './controller/eliminarModificarController.php';

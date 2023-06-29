@@ -27,7 +27,7 @@
         }
 
         public function listarLibrosSocio ($id) { 
-            $lib = "SELECT * FROM libro as l JOIN prestamo as p WHERE p.idUsuario='$id' AND l.id = p.idLibro";
+            $lib = "SELECT l.titulo, p.fechaPrestamo FROM libro as l JOIN prestamo as p WHERE p.idUsuario='$id' AND l.id = p.idLibro;";
 
             self::set_names();
             foreach ($this->dbh->query($lib) as $res){

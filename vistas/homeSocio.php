@@ -8,14 +8,11 @@ include_once("./controller/homeController.php");
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
-		<script src="https://cdn.tailwindcss.com"></script>
-		<link href="./dist/output.css" rel="stylesheet">
-	<!--	<script src="../js/util.js"></script>-->
-		<title>SeaBook</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="../dist/output.css" rel="stylesheet">
+     <title>SeaBook</title>
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.20/dist/full.css" rel="stylesheet" type="text/css" />
+      <script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body>				
 			<nav class="bg-white border-gray-200 dark:bg-gray-900 bg-cover bg-opacity-100 bg-[url('./images/libro.png')]">
@@ -72,8 +69,6 @@ include_once("./controller/homeController.php");
 								<p class="text-center ">
 									<?php echo $pd[$j]["autor"];?>
 								</p>
-								//require_once("../index.php?view=listarLibros");
-
 							</div>
 						</div>
 					</div>
