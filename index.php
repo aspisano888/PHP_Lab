@@ -3,12 +3,12 @@
 include_once './controller/Config.php';
 include_once './controller/ConexBD.php';
 
-
 session_start();
 
 if (isset($_SESSION) && isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'listarLibros':
+			include_once './controller/prestarLibroSocioController.php';
             include_once './controller/listarLibController.php';
             $vista = "listadoLibros";
             break;
@@ -20,8 +20,13 @@ if (isset($_SESSION) && isset($_GET['view'])) {
             include_once './controller/nuevoLibroController.php';
             $vista = "addBook";
             break;
+		case 'descripcionLibro':
+				include_once './controller/descrupcionLibroController.php';			
+				$vista = "descripcionLibro";
+				break;
         case 'eliminarLibro':
             include_once './controller/eliminarModificarController.php';
+			
             $vista = "eliminarModificarLibro";
             break;
         case 'descripcionLibro':
@@ -40,6 +45,7 @@ if (isset($_SESSION) && isset($_GET['view'])) {
             break;   
         case 'homeSocio':
             include_once './models/Libro.php';
+			include_once './controller/prestarLibroSocioController.php';
             $vista = "homeSocio";
             break;         
         case 'signout':

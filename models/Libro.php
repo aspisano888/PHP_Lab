@@ -48,6 +48,8 @@
             $this->dbh=null;
         }
 
+
+
         public function editarLibro ($Titulo, $Editorial, $Isbn, $Autor, $Descripcion, $id){
             try { 
                 $this->dbh->query("UPDATE libro SET titulo='$Titulo', editorial='$Editorial', isbn='$Isbn', autor='$Autor', descripcion='$Descripcion' WHERE id='$id'");
