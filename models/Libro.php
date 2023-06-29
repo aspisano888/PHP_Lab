@@ -35,7 +35,7 @@
            // $this->dbh=null;
         }
 
-        public function infoLibro (int $id) { 
+        public function infoLibro ($id) { 
             $lib = "SELECT * FROM libro WHERE id='$id'";
 
             self::set_names();

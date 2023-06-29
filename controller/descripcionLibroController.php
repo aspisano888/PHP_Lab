@@ -8,8 +8,7 @@ include_once("../models/Libro.php");
 echo "aca llego ";
 $libro = new Libro();
 echo "aca llego 2 ";
-
-$id = $_SESSION['libro'];
+$libro->infoLibro ($_SESSION['idLibro']);
 echo "aca llego 3 ";
 
 
