@@ -61,7 +61,14 @@
         }
 
         public function eliminarLibro ($id){
-            $this->dbh->query("DELETE FROM libro WHERE id='$id'");     
+            try {  
+                $this->dbh->query("DELETE FROM libro WHERE id='$id'");     
+                echo "<script>alert('Libro eliminado correctamente')</script>";
+            } catch (mysqli_sql_exception $e) { 
+                echo "<script>alert('Error al procesar los datos')</script>";
+                var_dump($e);
+                exit; 
+            }
          }
 
          public function agregarLibro ($Titulo, $Editorial, $Isbn, $Autor, $Imagen, $Descripcion, $Category){  

@@ -8,14 +8,13 @@ session_start();
 if (isset($_SESSION) && isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'listarLibros':
-			include_once './controller/prestarLibroSocioController.php';
             include_once './controller/listarLibController.php';
             $vista = "listadoLibros";
             break;
-            case 'procesarAgregado':
-                include_once './controller/addBookController.php';
-                $vista = "listadoLibros";
-                break;
+        case 'procesarAgregado':
+            include_once './controller/addBookController.php';
+            $vista = "listadoLibros";
+            break;
         case 'agregarLibro':
             include_once './controller/nuevoLibroController.php';
             $vista = "addBook";
@@ -26,7 +25,6 @@ if (isset($_SESSION) && isset($_GET['view'])) {
 				break;
         case 'eliminarLibro':
             include_once './controller/eliminarModificarController.php';
-			
             $vista = "eliminarModificarLibro";
             break;
         case 'descripcionLibro':
@@ -35,8 +33,8 @@ if (isset($_SESSION) && isset($_GET['view'])) {
             $vista = "descripcionLibro";
             break;
         case 'procesarEliminado':
-           // include_once "./controller/eliminarLibroController.php";
-            include_once '../controller/listarLibroController.php';
+            include_once "./controller/eliminarLibroController.php";
+            include_once './controller/listarLibController.php';
             $vista = "listadoLibros";
             break;
         case 'homeAdmin':
