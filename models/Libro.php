@@ -10,7 +10,7 @@
             $this->dbh = new PDO('mysql:host=localhost;dbname=php_labdb', "root", "");
         }
 
-        private function set_names() {
+        public function set_names() {
             return $this->dbh->query("SET NAMES 'latin1'");
         }
         
@@ -22,22 +22,22 @@
                 $this->libro[]=$res;
             }
             return $this->libro;
-            $this->dbh=null;
+            //$this->dbh=null;
 
         }
 
         public function listarLibrosSocio ($id) { 
-            $lib = "SELECT * FROM libro as l JOIN prestamo as p WHERE p.idUsuario='$id' AND l.id = p.idLibro";
+            $lib = "SELECT l.titulo, p.fechaPrestamo FROM libro as l JOIN prestamo as p WHERE p.idUsuario='$id' AND l.id = p.idLibro;";
 
             self::set_names();
             foreach ($this->dbh->query($lib) as $res){
                 $this->libro[]=$res;
             }
             return $this->libro;
-            $this->dbh=null;
+           // $this->dbh=null;
         }
 
-        public function infoLibro (int $id) { 
+        public function infoLibro ($id) { 
             $lib = "SELECT * FROM libro WHERE id='$id'";
 
             self::set_names();
@@ -45,7 +45,7 @@
                 $this->libro[]=$res;
             }
             return $this->libro;
-            $this->dbh=null;
+            //$this->dbh=null;
         }
 
 

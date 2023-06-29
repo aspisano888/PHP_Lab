@@ -1,15 +1,14 @@
 <?php
 //$id = $_GET["id"];
-require_once("../models/Prestamo.php");
-$_SESSION['error'];
-$prestamo = new Prestamo($_SESSION['id'],$_SESSION['libro']);
+require_once("./models/Prestamo.php");
+$prestamo = new Prestamo($_SESSION['id'],$_SESSION['idLibro']);
 if($prestamo->verificarPrestamos()){
+    $listaPrestamo = $prestamo->listarLibrosSocio();
     $_SESSION['error'] = "DENEGADO"; 
     //require_once("../index.php?view=prestarLibroSocio");
 }else{
     $prestamo->prestarLibroSocio();
-    $_SESSION['error'] = "PRESTADO"; 
-    //require_once("../index.php?view=listarLibros");
+    $listaPrestamo = $prestamo->listarLibrosSocio();
     
 }
 ?>

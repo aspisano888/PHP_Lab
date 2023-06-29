@@ -34,5 +34,16 @@
             $this->fechaPrestamo = date("Y-m-d");
             $this->dbh->query("INSERT INTO prestamo (idLibro,idUsuario,fechaPrestamo)VALUES ('$this->libroId', '$this->socioId', '$this->fechaPrestamo')");
         }
+
+        public function listarLibrosSocio () { 
+            $lib = "SELECT l.titulo, p.fechaPrestamo FROM libro as l JOIN prestamo as p WHERE p.idUsuario='$this->socioId' AND l.id = p.idLibro;";
+
+            self::set_names();
+            foreach ($this->dbh->query($lib) as $res){
+                $listaPrestamo[]=$res;
+            }
+            return $listaPrestamo;
+           // $this->dbh=null;
+        }
     }
 ?>
