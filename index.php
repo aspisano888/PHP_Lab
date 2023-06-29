@@ -4,8 +4,8 @@ include_once './controller/Config.php';
 include_once './controller/ConexBD.php';
 
 session_start();
-
 if (isset($_SESSION) && isset($_GET['view'])) {
+
     switch ($_GET['view']) {
         case 'listarLibros':
 			include_once './controller/prestarLibroSocioController.php';
@@ -16,8 +16,8 @@ if (isset($_SESSION) && isset($_GET['view'])) {
             include_once './controller/nuevoLibroController.php';
             $vista = "addBook";
             break;
-		case 'descripcionLibro':
-				include_once './controller/descrupcionLibroController.php';			
+        case 'descripcionLibro':
+                include_once './controller/descripcionLibroController.php';			
 				$vista = "descripcionLibro";
 				break;
         case 'eliminarLibro':

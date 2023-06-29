@@ -8,7 +8,7 @@
             $this->dbh = new PDO('mysql:host=localhost;dbname=php_labdb', "root", "");
         }
 
-        private function set_names() {
+        public function set_names() {
             return $this->dbh->query("SET NAMES 'latin1'");
         }
         
@@ -20,7 +20,7 @@
                 $this->libro[]=$res;
             }
             return $this->libro;
-            $this->dbh=null;
+            //$this->dbh=null;
 
         }
 
@@ -32,7 +32,7 @@
                 $this->libro[]=$res;
             }
             return $this->libro;
-            $this->dbh=null;
+           // $this->dbh=null;
         }
 
         public function infoLibro (int $id) { 
@@ -43,7 +43,7 @@
                 $this->libro[]=$res;
             }
             return $this->libro;
-            $this->dbh=null;
+            //$this->dbh=null;
         }
 
 

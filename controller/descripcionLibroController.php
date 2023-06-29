@@ -1,9 +1,16 @@
 <?php
+   /* if(isset($_GET['idLibro'])){
+        $_SESSION['libro'] = $_GET['idLibro']; 
+     }*/
+echo "aca llego antes ";
 
-$id = $_GET["id"];
-require_once("../models/Libro.php");
+include_once("../models/Libro.php");
+echo "aca llego ";
 $libro = new Libro();
-$pd = $libro->infoLibro($id);
-require_once("../vistas/descripcionLibro.php");
+echo "aca llego 2 ";
+
+$id = $_SESSION['libro'];
+echo "aca llego 3 ";
+
 
 ?>

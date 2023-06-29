@@ -61,9 +61,12 @@ include_once("./controller/homeController.php");
 					<div class="p-4 max-w-sm">
 						<div class="flex rounded-lg h-full border-4 bg-blue-300  p-2 flex-col">
 							<div class="flex items-center mb-3">
-                                <a href="./index.php?view=descripcionLibro?id=<?php echo $pd[$j]["id"];?>" class="mt-3 text-black hover:text-blue-600 inline-flex items-center">
-								    <figure  class=""><img src="data:image/png;base64,<?php echo base64_encode($pd[$j]['imagen']); ?>" class="h-full w-full  border-4 border-solid max-w-[150px] w-full  px-0 py-0" alt="car!"/></figure>
-                                </a>
+							<a href="./controller/descripcionLibroController.php" onclick="<?php $_SESSION['idLibro'] = $pd[$j]['id']; ?>" class="mt-3 text-black hover:text-blue-600 inline-flex items-center">
+								<figure>
+									<img src="data:image/png;base64,<?php echo base64_encode($pd[$j]['imagen']); ?>" class="h-full w-full border-4 border-solid max-w-[150px] w-full px-0 py-0" alt="car!" />
+								</figure>
+							</a>
+
 							</div>
 							<div class=" justify-center flex-grow">
 								<h2 class=" card-title text-lg text-center font-medium text-[#333]">
@@ -72,6 +75,7 @@ include_once("./controller/homeController.php");
 								<p class="text-center ">
 									<?php echo $pd[$j]["autor"];?>
 								</p>
+								//require_once("../index.php?view=listarLibros");
 
 							</div>
 						</div>
