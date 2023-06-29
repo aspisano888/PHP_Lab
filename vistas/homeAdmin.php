@@ -1,6 +1,5 @@
 
 <?php
-//include("../models/Conex.php");
 include_once("./controller/homeController.php");
 
 ?>
@@ -15,7 +14,6 @@ include_once("./controller/homeController.php");
 		<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
 		<script src="https://cdn.tailwindcss.com"></script>
 		<link href="./dist/output.css" rel="stylesheet">
-	<!--	<script src="../js/util.js"></script>-->
 		<title>SeaBook</title>
 	</head>
 	<body>				
@@ -70,15 +68,15 @@ include_once("./controller/homeController.php");
 					?>
 						<!-- card  -->
 					<div class="p-4 max-w-sm">
-						<div class="flex rounded-lg h-full bg-teal-400 p-2 flex-col">
+						<div class="flex rounded-lg h-full border-4 bg-blue-300  p-2 flex-col">
 							<div class="flex items-center mb-3">
-								<figure class="pl-7"><img src="data:image/png;base64,<?php echo base64_encode($pd[$j]['imagen']); ?>" class="h-full w-full  border-4 border-solid border-[#4070F4] max-w-[110px] w-full  px-0 py-0" alt="car!"/></figure>
+								<figure class=""><img src="data:image/png;base64,<?php echo base64_encode($pd[$j]['imagen']); ?>" class="h-full w-full  border-4 border-solid max-w-[150px] w-full  px-0 py-0" alt="car!"/></figure>
 							</div>
-							<div class="flex flex-col justify-center flex-grow">
-								<h2 class=" card-title text-lg font-medium text-[#333]">
+							<div class="justify-center flex-grow">
+								<h2 class=" card-title text-lg text-center font-medium text-[#333]">
 									<?php echo $pd[$j]["titulo"];?>
 								</h2>
-								<p class=" ">
+								<p class=" text-center">
 									<?php echo $pd[$j]["autor"];?>
 								</p>
 								<a href="#" class="mt-3 text-black hover:text-blue-600 inline-flex items-center">VER

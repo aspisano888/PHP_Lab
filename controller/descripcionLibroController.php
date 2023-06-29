@@ -4,12 +4,11 @@
      }*/
 echo "aca llego antes ";
 
-include_once("../models/Libro.php");
-echo "aca llego ";
+$id = $_GET["id"];
+require_once("./models/Libro.php");
 $libro = new Libro();
-echo "aca llego 2 ";
-$libro->infoLibro ($_SESSION['idLibro']);
-echo "aca llego 3 ";
+$pd = $libro->infoLibro($id);
+require_once("./vistas/descripcionLibro.php");
 
 
 ?>

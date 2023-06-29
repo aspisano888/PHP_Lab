@@ -12,6 +12,10 @@ if (isset($_SESSION) && isset($_GET['view'])) {
             include_once './controller/listarLibController.php';
             $vista = "listadoLibros";
             break;
+            case 'procesarAgregado':
+                include_once './controller/addBookController.php';
+                $vista = "listadoLibros";
+                break;
         case 'agregarLibro':
             include_once './controller/nuevoLibroController.php';
             $vista = "addBook";
@@ -25,10 +29,16 @@ if (isset($_SESSION) && isset($_GET['view'])) {
 			
             $vista = "eliminarModificarLibro";
             break;
-		case 'prestarLibroSocio':
-			include_once './controller/descripcionLibroController.php';
-			$vista = "descripcionLibro";
-			break;
+        case 'descripcionLibro':
+            $id= $_GET['id'];
+            include_once "./controller/descripcionLibroController.php";
+            $vista = "descripcionLibro";
+            break;
+        case 'procesarEliminado':
+           // include_once "./controller/eliminarLibroController.php";
+            include_once '../controller/listarLibroController.php';
+            $vista = "listadoLibros";
+            break;
         case 'homeAdmin':
             include_once './models/Libro.php';
             $vista = "homeAdmin";
@@ -62,8 +72,10 @@ if (isset($_SESSION) && isset($_GET['view'])) {
             $res = $inicioSesion->iniciarSesion();
             if($res){ //(count($res) === 1) {
                 foreach ($res as $fila) {
+                    if($_POST['nickname'] == $fila['nombre']){
                     $_SESSION['id'] = $fila['id'];
                     $_SESSION['tipo'] = $fila['tipo'];
+                    }
                 }
                 if ($_SESSION['tipo'] == 'socio') {
                     $_SESSION['home'] = "homeSocio";

@@ -2,9 +2,25 @@
 //include("../controller/infoLibController.php");
 //include("../controller/eliminarLibroController.php");
 $id = $_GET["id"];
+
+
+
+
+
+
+
+
+
+
+
+							//NO ESTA EN USO  ¿?
+
+
+
+
 ?>
 
-
+							
 <!DOCTYPE html>
 <html>
 	<head>

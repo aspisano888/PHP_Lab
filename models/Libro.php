@@ -1,4 +1,6 @@
 <?php
+
+
     class Libro {
         private $dbh;
         private $libro;
@@ -51,7 +53,7 @@
         public function editarLibro ($Titulo, $Editorial, $Isbn, $Autor, $Descripcion, $id){
             try { 
                 $this->dbh->query("UPDATE libro SET titulo='$Titulo', editorial='$Editorial', isbn='$Isbn', autor='$Autor', descripcion='$Descripcion' WHERE id='$id'");
-                
+                return true;
             } catch (mysqli_sql_exception $e) { 
                var_dump($e);
                exit; 
@@ -62,9 +64,14 @@
             $this->dbh->query("DELETE FROM libro WHERE id='$id'");     
          }
 
-         public function agregarLibro ($Titulo, $Editorial, $Isbn, $Autor, $Imagen, $Descripcion){
-            $this->dbh->query("INSERT INTO libro (titulo, editorial, isbn, autor, imagen, descripcion) VALUES  ('$Titulo', '$Editorial', '$Isbn', '$Autor', '$Imagen', '$Descripcion')");     
-         }
+         public function agregarLibro ($Titulo, $Editorial, $Isbn, $Autor, $Imagen, $Descripcion, $Category){  
+            try {  
+            $this->dbh->query("INSERT INTO libro (titulo, editorial, isbn, autor, imagen, descripcion, idCategoria) VALUES  ('$Titulo', '$Editorial', '$Isbn', '$Autor', '$Imagen', '$Descripcion', '$Category')");     
+            } catch (mysqli_sql_exception $e) { 
+                var_dump($e);
+                exit; 
+            }
+        }
         
     }
     

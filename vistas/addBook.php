@@ -1,8 +1,3 @@
-<?php
-
-//include_once("../controller/addBookController.php");
-
-?>
 
 
 <!DOCTYPE html>
@@ -33,18 +28,13 @@
 					<div id="mega-menu" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
 						<ul class="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
 							<li>
-								<a href="../controller/listarLibController.php" class="block py-2 pl-3 pr-4 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+								<a href="./index.php?view=listarLibros" class="block py-2 pl-3 pr-4 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
 									Listar
 								</a>
 							</li>
 							<li>
-								<a href="../controller/listarLibController.php" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
-									Eliminar
-								</a>
-							</li>
-							<li>
-								<a href="../controller/listarLibController.php" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
-									Modificar
+								<a href="./index.php?view=eliminarLibro" class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+									Eliminar/Modificar
 								</a>
 							</li>
 						</ul>
@@ -52,41 +42,41 @@
 				</div>
 			</nav>
     <body>
-        <form class="" action="../controller/addBookController.php" method="post">
-            <div class=" grid grid-auto-row grid-cols-1 py-[100px] ">
-                <table class="table table-xs table-fixed flex items-center w-[1090px] ">
+		<div class="object-center py-[100px] ">
+        <form class="" action="./index.php?view=procesarAgregado" enctype="multipart/form-data" method="post" >
+                <table class=" align-center border-separate border-spacing-2 border border-slate-500 ">
                     <thead>
                         <tr class="font-[bold] text-3xl ">
-                            <td class="">Titulo</td>
-                            <td class="">Editorial</td>
-                            <td class="">Isbn</td>
-                            <td class="">Autor</td>
-                            <td class="">Imagen</td>
-                            <td class="">Descripcion</td>
-                            <td class="">Categoria</td>
+                            <td class="pl-[10px]">Titulo</td>
+                            <td class="pl-[10px]">Editorial</td>
+                            <td class="pl-[10px]">Isbn</td>
+                            <td class="pl-[10px]">Autor</td>
+                            <td class="pl-[10px]">Imagen</td>
+                            <td class="pl-[10px]">Descripcion</td>
+                            <td class="pl-[10px]">Categoria</td>
                         </tr>
                     </thead> 
                 	<tbody>
 						<tr>
-							<td><input type="text" class="" name="titulo"> </td>
-							<td><input type="text" class="table__input" name="editorial"> </td>
-							<td><input type="text" class="table__input"  name="isbn"> </td>
-                            <td><input type="text" class="table__input"  name="autor"> </td>
-							<td><input type="file" class="table__input"  name="imagen"> </td>
-							<td><input type="text" class="table__input"  name="descripcion"> </td>
-                            <td>
-                                <select id="categories" class="">
+							<td class="pl-[10px]"><input type="text" class="w-[150px] border-3" name="titulo"> </td>
+							<td class="pl-[10px]"><input type="text" class="w-[150px] border-3" name="editorial"> </td>
+							<td class="pl-[10px]"><input type="text" class="w-[150px] border-3"  name="isbn"> </td>
+                            <td class="pl-[10px]"><input type="text" class="w-[150px] border-3"  name="autor"> </td>
+							<td class="pl-[10px]"><input type="file" class="border-3"  name="imagen"> </td>
+							<td class="pl-[5px]"><input type="text" class="w-[150px] border-3"  name="descripcion"> </td>
+                            <td class="pl-[10px]">
+                                <select id="categories" name="category" class="pr-[5px]">
                                     <option selected>Category</option>
                                     <?php for($i=0;$i<count($cat);$i++){ ?>
-                                            <option class="table__input" value="<?php echo $cat[$i]['nombre'];?>" name="category"></option>
+                                            <option  class="table__input" value="<?php echo $cat[$i]['id'];?>" name=""><?php echo $cat[$i]['nombre'];?></option>
                                     <?php } ?>
                                 </select>
                             </td>
-							<td><input type="submit" value="Agregar" class="container__submit container__submit_actualizar"></td>
+							<td><input type="submit" name="insert" value="Agregar" class="container__submit container__submit_actualizar"></td>
 						<tr>
 					</tfoot>
             	</table>
-        	</div>
-		</form> 
+			</form> 
+		</div>
     </body>
 </html>
