@@ -2,6 +2,32 @@
 //include("../models/Conex.php");
 include_once("./controller/homeController.php");
 
+
+
+
+
+
+
+
+
+
+
+
+						//NO ESTA EN USO ¿?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
 
 

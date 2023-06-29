@@ -30,6 +30,7 @@ class Login  {
     public function iniciarSesion() {
         //$retorno = [];
         $query = "SELECT 
+                    nombre,
                     id,
                     tipo
                     FROM usuario
