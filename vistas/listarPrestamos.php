@@ -48,12 +48,12 @@
             	</table>
         	</div>
 			<?php } else {?> 
-			<div class="px-[560px] pt-[200px]">
+			<div class="px-[560px] pt-[100px] pb-[40px]">
 				<h1 class="text-2xl text-blue-900">Sin libros adquiridos</h1>
 			</div>
 			<?php } ?>
 		</div>
-		<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+		<footer class="h-[150px] fixed footer footer-center p-10 bg-base-200 text-base-content rounded">
         	<div class="grid grid-flow-col gap-4">
           		<a class="link link-hover">About us</a> 
           		<a class="link link-hover">Contact</a> 

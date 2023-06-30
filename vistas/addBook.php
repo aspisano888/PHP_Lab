@@ -49,7 +49,7 @@
 							<td class="pl-[10px] text-black"><input type="text" class="w-[150px] border-3 bg-white" name="editorial"> </td>
 							<td class="pl-[10px] text-black"><input type="text" class="w-[150px] border-3 bg-white"  name="isbn"> </td>
                             <td class="pl-[10px] text-black"><input type="text" class="w-[150px] border-3 bg-white"  name="autor"> </td>
-							<td class="pl-[10px] text-black "><input type="file" class=" w-[210px]  border-3 bg-white"  name="imagen"> </td>
+							<td class="pl-[10px] text-black "><input type="text" class=" w-[210px]  border-3 bg-white"  name="imagen"> </td>
 							<td class="pl-[10px] text-black"><input type="text" class="w-[150px] border-3 bg-white"  name="descripcion"> </td>
                             <td class="pl-[10px] text-black">
                                 <select id="categories" name="category" class="border-black text-black btn hover:bg-transparent w-[125px] h-[2px] bg-transparent pr-[10px]">
@@ -65,7 +65,7 @@
             	</table>
 			</form> 
 		</div>
-        <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+        <footer class="footer footer-center h-[150px] fixed p-10 bg-base-200 text-base-content rounded">
         	<div class="grid grid-flow-col gap-4">
           		<a class="link link-hover">About us</a> 
           		<a class="link link-hover">Contact</a> 

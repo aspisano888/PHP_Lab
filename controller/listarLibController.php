@@ -5,8 +5,12 @@ if ($_SESSION['tipo'] == 'administrador'){
     $libro = new Libro();
     $pd = $libro->listarLibros();
 } else {
+    if(empty($_SESSION['idLibro'])){
+        $listaPrestamo = null;
+    } else {
     require_once("./models/Prestamo.php");
     $prestamo = new Prestamo($_SESSION['id'],$_SESSION['idLibro']);
     $listaPrestamo = $prestamo->listarLibrosSocio();
+    }
 }
 ?>

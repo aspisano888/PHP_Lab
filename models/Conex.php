@@ -20,7 +20,7 @@ class Conexion {
 }*/
 
 	$conex = mysqli_connect("localhost","root","", "php_labdb");
-	mysqli_set_charset($conex, "utf8");
+	mysqli_set_charset($conex, "latin1");
 /*
 function Conectarse() { 
 	$dbhost= "localhost"; 

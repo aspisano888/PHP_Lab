@@ -59,14 +59,14 @@ include_once("./controller/homeController.php");
 						<div class="flex rounded-lg h-full border-4 bg-blue-300  p-2 flex-col">
 							<div class="flex items-center mb-3">
                                 <a href="./index.php?id=<?php echo $pd[$j]["id"];?>&view=descripcionLibro" class="mt-3 text-black hover:text-blue-600 hover:p-[20px] inline-flex items-center">
-								    <figure  class=""><img src="data:image/png;base64,<?php echo base64_encode($pd[$j]['imagen']); ?>" class="h-full w-full  border-4 border-solid max-w-[150px] w-full  px-0 py-0" alt="car!"/></figure>
+								    <figure  class=""><img src="./images/<?php echo $pd[$j]['imagen']; ?>" class="h-full w-full  border-4 border-solid max-w-[150px] w-full  px-0 py-0" alt="car!"/></figure>
                                 </a>
 							</div>
-							<div class=" justify-center flex-grow">
-								<h2 class=" card-title text-lg text-center font-medium text-[#333]">
+							<div class=" text-center ">
+								<h2 class="card-title text-lg justify-center font-medium text-[#333]">
 									<?php echo $pd[$j]["titulo"];?>
 								</h2>
-								<p class="text-center ">
+								<p class="text-center text-black">
 									<?php echo $pd[$j]["autor"];?>
 								</p>
 							</div>
@@ -81,7 +81,7 @@ include_once("./controller/homeController.php");
 				}
 				?>
 		</div>
-        <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+        <footer class=" h-[150px] footer footer-center p-10 bg-base-200 text-base-content rounded">
         	<div class="grid grid-flow-col gap-4">
           		<a class="link link-hover">About us</a> 
           		<a class="link link-hover">Contact</a> 

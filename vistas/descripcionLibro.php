@@ -30,8 +30,8 @@
           </div>
         </div>
     </nav>
-    <div class="flex bg-white py-2 px-32 pt-[60px] pb-[100px] bg-gradient-to-r from-blue-200 to-blue-100">
-        <img src="data:image/png;base64,<?php echo base64_encode($pd[$i]['imagen']); ?>"  alt="">
+    <div class="flex bg-white py-2  px-32 pt-[60px] pb-[40px] bg-gradient-to-r from-blue-200 to-blue-100">
+        <img class="max-w-[150px]" src="./images/<?php echo $pd[$i]['imagen']; ?>"  alt="">
         <div class="px-32">
             <h3 class="font-semibold text-4xl text-black"><?php echo $pd[$i]["titulo"]?></h3>
             <p class="py-4 text-black"><?php echo $pd[$i]["autor"]?></p>
@@ -44,7 +44,7 @@
         </div>
     </div>
     <?php } ?>
-    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+    <footer class="h-[150px] fixed footer footer-center p-10 bg-base-200 text-base-content rounded">
         <div class="grid grid-flow-col gap-4">
           <a class="link link-hover">About us</a> 
           <a class="link link-hover">Contact</a> 

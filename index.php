@@ -5,7 +5,6 @@ include_once './controller/ConexBD.php';
 
 session_start();
 if (isset($_SESSION) && isset($_GET['view'])) {
-
     switch ($_GET['view']) {
         case 'listarLibros':
             include_once './controller/listarLibController.php';
@@ -49,7 +48,7 @@ if (isset($_SESSION) && isset($_GET['view'])) {
             break;   
         case 'homeSocio':
             include_once './models/Libro.php';
-			include_once './controller/prestarLibroSocioController.php';
+			//include_once './controller/prestarLibroSocioController.php';
             $vista = "homeSocio";
             break;         
         case 'signout':

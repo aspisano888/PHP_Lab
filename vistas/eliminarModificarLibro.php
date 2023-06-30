@@ -45,7 +45,7 @@
                     ?>
                     <tr>
                         <td class="">
-							<figure class=""><img src="data:image/png;base64,<?php echo base64_encode($pd[$i]['imagen']);?>" class="border-2 border-solid border-[#4070F4] max-w-[70px] h-full w-full " /></figure>
+							<figure class=""><img src="./images/<?php echo $pd[$i]['imagen'];?>" class="border-2 border-solid border-[#4070F4] max-w-[70px] h-full w-full " /></figure>
                         </td>
                         <td class=" text-2xl text-black"><?php echo $pd[$i]["titulo"];?></td> 
                         <td class=" text-2xl text-black"><?php echo $pd[$i]["editorial"];?></td> 
@@ -64,7 +64,7 @@
                 </tfoot>
             </table>
         </div>
-		<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+		<footer class="h-[150px] fixed footer footer-center p-10 bg-base-200 text-base-content rounded">
         	<div class="grid grid-flow-col gap-4">
           		<a class="link link-hover">About us</a> 
           		<a class="link link-hover">Contact</a> 

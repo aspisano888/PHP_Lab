@@ -44,52 +44,37 @@
 				</div>
 			</div>
 		</nav>
-		<div class=" grid grid-cols-1 flex items-center justify-center bg-gradient-to-r from-blue-200 to-blue-100">
+		<div class=" bg-gradient-to-r from-blue-200 to-blue-100">
 			<div class=" h-[290px] bg-cover bg-[url('./images/CYK4ES3RWVBFVEZKD3EZXHGPUQ.png')]">
 				<div class="relative h-56 overflow-hidden rounded-lg md:h-[290px]"></div>
 			</div>		
-			<?php	
-				for($i=0;$i<count($cat);$i++){
-			?>
-				<h2 class="text-3xl font-medium text-[#333] pl-[50px] pt-[20px] ">
-					<?php echo $cat[$i]["nombre"];?>
-				</h2>
-				<div class="flex flex-wrap justify-center mt-1">
-					<?php	
-						for($j=0;$j<count($pd);$j++){
-							if ($pd[$j]["idCategoria"] === $cat[$i]["id"]){
-					?>
-					<div class="p-4 max-w-sm">
-						<div class="flex rounded-lg h-full border-4 bg-blue-300  p-2 flex-col">
-							<div class="flex items-center mb-3">
-								<figure class=""><img src="<?php echo $pd[$j]['imagen']; ?>" class="h-full w-full  border-4 border-solid max-w-[150px] w-full  px-0 py-0" alt="car!"/></figure>
-							</div>
-							<div class="justify-center flex-grow">
-								<h2 class=" card-title text-lg text-center font-medium text-[#333]">
-									<?php echo $pd[$j]["titulo"];?>
-								</h2>
-								<p class=" text-center">
-									<?php echo $pd[$j]["autor"];?>
-								</p>
-								<a href="#" class="mt-3 text-black hover:text-blue-600 inline-flex items-center">VER
-									<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-										stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-										<path d="M5 12h14M12 5l7 7-7 7"></path>
-									</svg>
-								</a>
-							</div>
+			<?php for($i=0;$i<count($cat);$i++){ ?>
+			<h2 class="text-3xl font-medium text-[#333] pl-[50px] pt-[20px] ">
+				<?php echo $cat[$i]["nombre"];?>
+			</h2>
+			<div class="flex flex-wrap justify-center mt-1">
+				<?php for($j=0;$j<count($pd);$j++){
+						if ($pd[$j]["idCategoria"] === $cat[$i]["id"]){ ?>
+				<div class="p-4 max-w-sm">
+					<div class="text-center flex rounded-lg h-full border-4 bg-blue-300  p-2 flex-col">
+						<div class="flex items-center mb-3">
+							<figure class=""><img src="./images/<?php echo $pd[$j]['imagen'];?>" class="h-full w-full  border-4 border-solid max-w-[150px] w-full  px-0 py-0" alt="car!"/></figure>
+						</div>
+						<div class=" flex-grow">
+							<h2 class="card-title justify-center text-lg text-center font-medium text-[#333]">
+								<?php echo $pd[$j]["titulo"];?>
+							</h2>
+							<p class="text-black text-center">
+								<?php echo $pd[$j]["autor"];?>
+							</p>
 						</div>
 					</div>
-						<?php
-						}
-							}
-						?>
 				</div>
-				<?php 
-				}
-				?>
+					<?php } } ?>
+			</div>
+			<?php } ?>
 		</div>
-        <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+        <footer class="footer footer-center h-[150px] p-10 bg-base-200 text-base-content rounded">
         	<div class="grid grid-flow-col gap-4">
           		<a class="link link-hover">About us</a> 
           		<a class="link link-hover">Contact</a> 
