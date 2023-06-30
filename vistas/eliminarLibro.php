@@ -4,7 +4,7 @@
 $id = $_GET["id"];
 
 
-
+/*
 
 
 
@@ -70,4 +70,4 @@ $id = $_GET["id"];
 		</nav>
 		<span class="self-center text-4xl font-semibold whitespace-nowrap dark:text-black">El libro eliminado correctamente</span>
     </body>
-</html>
+</html>*/

@@ -1,6 +1,5 @@
 <?php
-
-$targetDir = "images/";
+include_once("./models/Conex.php");
 
 $Titulo = $_POST['titulo'];
 $Editorial = $_POST['editorial'];
@@ -10,15 +9,22 @@ $Descripcion = $_POST['descripcion'];
 $Category = $_POST['category'];
 //$Imagen = $_POST['imagen'];
 
-    $fileName = $_FILES['imagen']['name'];
-    $tmp_name = $_FILES['imagen']['tmp_name'];
-    $folder = "./images/" . $fileName;
-    move_uploaded_file($tmp_name,$folder);
-    
+$Imagen = $_FILES['imagen'];
+$imageFileName = $Imagen['name'];
+$imageFileTemp = $Imagen['tmp_name'];
+
+$upload_image ='./images/'. $imageFileName;
+move_uploaded_file($imageFileTemp, $upload_image);
+/*
+$sql = "INSERT INTO 'libro' ('titulo','editorial','isbn','autor','imagen','descripcion','idCategoria') VALUES  ('[$Titulo]','[$Editorial]','[$Isbn]','[$Autor]','[$upload_image]','[$Descripcion]','[$Category]')";
+
+$result =mysqli_query($conex, $sql); 
+*/
+
 require_once("./models/Libro.php");
 $libro = new Libro();
-$pd = $libro->agregarLibro($Titulo, $Editorial, $Isbn, $Autor, $folder, $Descripcion, $Category );
-if($pd){
+$pd = $libro->agregarLibro($Titulo, $Editorial, $Isbn, $Autor, $upload_image, $Descripcion, $Category );
+if($result){
     echo "<script>alert('Libro agregado correctamente');
     window.location='/codigos/PHP_LAB/index.php?view=listarLibros.php'</script>;";
 } else {

@@ -73,7 +73,9 @@
 
          public function agregarLibro ($Titulo, $Editorial, $Isbn, $Autor, $Imagen, $Descripcion, $Category){  
             try {  
-            $this->dbh->query("INSERT INTO libro (titulo, editorial, isbn, autor, imagen, descripcion, idCategoria) VALUES  ('$Titulo', '$Editorial', '$Isbn', '$Autor', '$Imagen', '$Descripcion', '$Category')");     
+                $sql = 
+            $this->dbh->query("INSERT INTO 'libro' ('titulo','editorial','isbn','autor','imagen','descripcion','idCategoria') 
+                                VALUES  ('[$Titulo]','[$Editorial]','[$Isbn]','[$Autor]','[$Imagen]','[$Descripcion]','[$Category]')");     
             } catch (mysqli_sql_exception $e) { 
                 var_dump($e);
                 exit; 

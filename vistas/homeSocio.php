@@ -8,16 +8,16 @@ include_once("./controller/homeController.php");
 <!DOCTYPE html>
 <html>
 	<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="../dist/output.css" rel="stylesheet">
-     <title>SeaBook</title>
-     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.20/dist/full.css" rel="stylesheet" type="text/css" />
-      <script src="https://cdn.tailwindcss.com"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	<link href="../dist/output.css" rel="stylesheet">
+     	<title>SeaBook</title>
+     	<link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.20/dist/full.css" rel="stylesheet" type="text/css" />
+      	<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body>				
-			<nav class="bg-white border-gray-200 dark:bg-gray-900 bg-cover bg-opacity-100 bg-[url('./images/libro.png')]">
+			<nav class="bg-white border-gray-200 bg-center dark:bg-gray-900 bg-cover bg-opacity-100 bg-[url('./images/libro.png')]">
 				<div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
-					<a href="../index.php?view=<?php echo $_SESSION['home']?>" class="flex items-center">
+					<a href="./index.php?view=<?php echo $_SESSION['home']?>" class="flex items-center">
 						<img src ="./images/logo.png" style="width:70px;height:70px" class="h-8 mr-3" alt="Flowbite Logo" />
 						<span class="self-center text-5xl font-semibold whitespace-nowrap dark:text-white">SeaBook</span>
 					</a>
@@ -31,7 +31,7 @@ include_once("./controller/homeController.php");
 					<div id="mega-menu" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
 						<ul class="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
 							<li class="nav-item">
-								<a href="./index.php?view=listarLibros" class="nav-link block py-2 pl-3 pr-4 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+								<a href="./index.php?view=listarLibros" class=" hover:text-xl block  py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-900 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
 									Listar Adquiridos
 								</a>
 							</li>
@@ -58,7 +58,7 @@ include_once("./controller/homeController.php");
 					<div class="p-4 max-w-sm">
 						<div class="flex rounded-lg h-full border-4 bg-blue-300  p-2 flex-col">
 							<div class="flex items-center mb-3">
-                                <a href="./index.php?id=<?php echo $pd[$j]["id"];?>&view=descripcionLibro" class="mt-3 text-black hover:text-blue-600 inline-flex items-center">
+                                <a href="./index.php?id=<?php echo $pd[$j]["id"];?>&view=descripcionLibro" class="mt-3 text-black hover:text-blue-600 hover:p-[20px] inline-flex items-center">
 								    <figure  class=""><img src="data:image/png;base64,<?php echo base64_encode($pd[$j]['imagen']); ?>" class="h-full w-full  border-4 border-solid max-w-[150px] w-full  px-0 py-0" alt="car!"/></figure>
                                 </a>
 							</div>
@@ -82,22 +82,22 @@ include_once("./controller/homeController.php");
 				?>
 		</div>
         <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
-        <div class="grid grid-flow-col gap-4">
-          <a class="link link-hover">About us</a> 
-          <a class="link link-hover">Contact</a> 
-          <a class="link link-hover">Jobs</a> 
-          <a class="link link-hover">Press kit</a>
-        </div> 
-        <div>
-          <div class="grid grid-flow-col gap-4">
-            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a> 
-            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a> 
-            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
-          </div>
-        </div> 
-        <div>
-          <p>Copyright © 2023 - All right reserved by SeaBook & Cia</p>
-        </div>
-      </footer>
+        	<div class="grid grid-flow-col gap-4">
+          		<a class="link link-hover">About us</a> 
+          		<a class="link link-hover">Contact</a> 
+          		<a class="link link-hover">Jobs</a> 
+          		<a class="link link-hover">Press kit</a>
+        	</div> 
+        	<div>
+          		<div class="grid grid-flow-col gap-4">
+           			<a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a> 
+            		<a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a> 
+            		<a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+          		</div>
+        	</div> 
+        	<div>
+          		<p>Copyright © 2023 - All right reserved by SeaBook & Cia</p>
+        	</div>
+      	</footer>
 	</body>
 </html>

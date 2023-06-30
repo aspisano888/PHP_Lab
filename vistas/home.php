@@ -7,7 +7,7 @@ include_once("./controller/homeController.php");
 
 
 
-
+/*
 
 
 
@@ -116,3 +116,4 @@ include_once("./controller/homeController.php");
 		</footer>
 	</body>
 </html>
+*/

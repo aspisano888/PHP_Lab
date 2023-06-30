@@ -17,7 +17,7 @@
 		<script src="../js/util.js"></script>
 		<title>Edicion Libro</title>
 	</head>
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 bg-cover bg-opacity-100 bg-[url('../images/libro.png')]">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 bg-center bg-cover bg-opacity-100 bg-[url('../images/libro.png')]">
 				<div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
 					<a href="./index.php?view=<?php echo $_SESSION['home']?>" class="flex items-center">
 						<img src ="../images/logo.png" style="width:70px;height:70px" class="h-8 mr-3" alt="Flowbite Logo" />
