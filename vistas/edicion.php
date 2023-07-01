@@ -44,7 +44,7 @@
 			</div>
 		</nav>
 		<div class="object-center py-[60px] bg-gradient-to-r from-blue-200 to-blue-100">
-			<form class="pl-[10px] pr-[10px]" action="./index.php?view=procesarAgregado" action="../controller/editarLibroController.php" method="post">
+			<form class="pl-[10px] pr-[10px]" action="../index.php?view=editarLibro" action="../controller/editarLibroController.php" method="post">
 				<div class="overflow-x-auto grid grid-auto-row py-[30px]">
 					<table class="align-center border-separate border-spacing-3  border border-slate-500">
 						<thead>

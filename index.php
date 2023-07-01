@@ -16,12 +16,16 @@ if (isset($_SESSION) && isset($_GET['view'])) {
             break;
         case 'procesarAgregado':
             include_once './controller/addBookController.php';
-            $vista = "listadoLibros";
+            $vista = "homeAdmin";
             break;
         case 'agregarLibro':
             include_once './controller/nuevoLibroController.php';
             $vista = "addBook";
             break;
+        case 'editarLibro':
+            include_once './controller/editarLibroController.php';
+            $vista = "listarLibros";
+            break; 
         case 'prestarLibro':
                 $_SESSION['idLibro']= $_GET['id'];
                 $_SESSION['titulo']= $_GET['titulo'];
